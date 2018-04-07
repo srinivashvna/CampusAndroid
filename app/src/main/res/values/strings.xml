@@ -5,7 +5,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="copyright">&#169; 2018 CAMPUZ. All Rights Reserved.</string>
-    <string name="action_settings">Settings</string>
+    <string name="logout">Logout</string>
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
@@ -17,5 +17,25 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
+
+    <!-- Strings related to Navigation drwawer -->
+    <string name="item_location">Location</string>
+    <string name="item_reports_progress">Progress Reports</string>
+    <string name="item_reports_dairy">Dairy Report</string>
+    <string name="item_syllubus">Syllubus</string>
+    <string name="item_attendance">Attendance</string>
+    <string name="item_timetable">TimeTable</string>
+    <string name="item_exams">Exams</string>
+    <string name="item_events">Events</string>
+    <string name="item_holidays">Holidays</string>
+    <string name="item_leaves">Leaves</string>
+    <string name="item_chat">Chat</string>
+    <string name="item_camera">Camera</string>
+    <string name="item_contact">Contact</string>
+    <string name="item_notify">Notifications</string>
+    <string name="hello">Hello</string>
+
+
+
 
 </resources>

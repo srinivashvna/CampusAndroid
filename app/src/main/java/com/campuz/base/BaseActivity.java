@@ -24,8 +24,9 @@ import com.campuz.util.Constants;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class BaseActivity extends AppCompatActivity
-       {
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
+public class BaseActivity extends AppCompatActivity {
 
     public ProgressDialog myDialog;
 
@@ -44,6 +45,13 @@ public class BaseActivity extends AppCompatActivity
         return myDialog;
     }
 
+    // pass context to Calligraphy
+    @Override
+    protected void attachBaseContext(Context context) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(context));
+    }
+
+
     public void hideKeyboard() {
         try {
             InputMethodManager inputManager = (InputMethodManager) this.getSystemService(
@@ -56,7 +64,7 @@ public class BaseActivity extends AppCompatActivity
         }
     }
 
-    public  String getCurrentTimeStamp(){
+    public String getCurrentTimeStamp() {
         try {
 
             SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.DATE_FORMAT_LOCATION);

@@ -3,6 +3,8 @@ package com.campuz.parent;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -36,6 +38,9 @@ import java.util.List;
 
 import com.campuz.R;
 import com.campuz.base.BaseActivity;
+import com.campuz.base.SplashActivity;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -61,14 +66,15 @@ public class LoginActivity extends BaseActivity {
         mEmailView = (EditText) findViewById(R.id.email);
         mPasswordView = (EditText) findViewById(R.id.password);
 
-      /*  Button mEmailSignInButton = (Button) findViewById(R.id.);
+        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+                startActivity(i);
+                finish();
             }
         });
-*/
     }
 
 
@@ -80,6 +86,12 @@ public class LoginActivity extends BaseActivity {
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
         return password.length() > 4;
+    }
+
+    // pass context to Calligraphy
+    @Override
+    protected void attachBaseContext(Context context) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(context));
     }
 
 }

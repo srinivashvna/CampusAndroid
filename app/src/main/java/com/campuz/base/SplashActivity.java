@@ -1,5 +1,6 @@
 package com.campuz.base;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,6 +10,8 @@ import android.view.WindowManager;
 import com.campuz.R;
 import com.campuz.parent.HomeActivity;
 import com.campuz.parent.LoginActivity;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * Created by manikantad on 06-04-2018.
@@ -44,6 +47,12 @@ public class SplashActivity extends BaseActivity {
             }
         }, SPLASH_TIME_OUT);
 
+    }
+
+    // pass context to Calligraphy
+    @Override
+    protected void attachBaseContext(Context context) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(context));
     }
 
 }
