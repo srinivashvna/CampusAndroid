@@ -36,6 +36,13 @@
     <string name="hello">Hello</string>
 
 
+    <!-- Strings related to Landing screen -->
+    <string name="campuzschool">Campuz School</string>
+    <string name="hellods">DS</string>
+    <string name="ds">Srinivas</string>
+    <string name="rollno">09NG1A1914</string>
+
+
 
 
 </resources>

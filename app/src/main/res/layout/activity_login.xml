@@ -22,7 +22,7 @@
         android:layout_marginTop="@dimen/ninetyseven"
         android:text="@string/app_name"
         android:textColor="@color/dullgrey"
-        android:textSize="@dimen/thirtyseven" />
+        android:textSize="@dimen/thirtysevensp" />
 
     <EditText
         android:id="@+id/email"
