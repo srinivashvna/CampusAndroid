@@ -12,6 +12,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="colorPrimary">@color/appblue</item>
+        <item name="colorPrimaryDark">@color/blue</item>
     </style>
 
 

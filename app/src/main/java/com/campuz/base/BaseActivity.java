@@ -6,6 +6,9 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -77,4 +80,43 @@ public class BaseActivity extends AppCompatActivity {
             return null;
         }
     }
+
+    /**
+     * This method to replace a fragment in through out the app
+     */
+    public void replaceFragment(Fragment frag, boolean addToBackStack) {
+        try {
+
+            String backStateName = frag.getClass().getName();
+            FragmentManager manager = getSupportFragmentManager();
+            boolean fragmentPopped = manager.popBackStackImmediate(backStateName, 0);
+
+            if (!fragmentPopped && manager.findFragmentByTag(frag.getClass().getSimpleName()) == null) { //fragment not in back stack, create it.
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.container_layout, frag, frag.getClass().getSimpleName());
+                if (addToBackStack)
+                    transaction.addToBackStack(frag.getClass().getSimpleName());
+                transaction.commitAllowingStateLoss();
+            } else {
+                getSupportFragmentManager().popBackStack();
+            }
+        } catch (Exception e) {
+
+        }
+    }
+
+    /**
+     * This method removes the Fragment from backstack
+     */
+
+    public void removeFragment() {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            getSupportFragmentManager().popBackStack();
+            Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.container_layout);
+        } else {
+            finish();
+        }
+
+    }
+
 }

@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -24,6 +25,8 @@ import android.widget.TextView;
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.campuz.R;
 import com.campuz.base.BaseActivity;
+import com.campuz.parentfragments.HomeFragment;
+import com.campuz.parentfragments.LeaveFragment;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -31,9 +34,10 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
  * Created by manikantad on 06-04-2018.
  */
 
-public class HomeActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class LandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, LeaveFragment.OnFragmentInteractionListener,HomeFragment.OnFragmentInteractionListener {
 
     private View header;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,27 +59,28 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        header=navigationView.getHeaderView(0);
-        init();
+        header = navigationView.getHeaderView(0);
 
-    }
-
-    public void init(){
-
-        TextView txtName = (TextView) header.findViewById(R.id.txtName);
+        TextView txtName = (TextView)header. findViewById(R.id.txtName);
         txtName.setText(R.string.ds);
-        ImageView imgProfile = (ImageView) findViewById(R.id.imgProfile);
         ImageView imgProfilenav = (ImageView)header. findViewById(R.id.imgProfilenav);
         TextDrawable drawable = TextDrawable.builder().beginConfig()
                 .withBorder(10)
                 .bold()
                 .useFont(Typeface.DEFAULT)
                 .endConfig()
-                .buildRound("DS",getResources().getColor(R.color.appblue));
+                .buildRound("DS", getResources().getColor(R.color.appblue));
 
 
-        imgProfile.setImageDrawable(drawable);
         imgProfilenav.setImageDrawable(drawable);
+
+        init();
+
+    }
+
+    public void init() {
+        HomeFragment homeFragment = new HomeFragment();
+        replaceFragment(homeFragment, false);
     }
 
     // pass context to Calligraphy
@@ -128,6 +133,9 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
 
         } else if (id == R.id.nav_attendance) {
 
+        } else if (id == R.id.nav_leaves) {
+            LeaveFragment leaveFragment = new LeaveFragment();
+            replaceFragment(leaveFragment, true);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -135,5 +143,8 @@ public class HomeActivity extends BaseActivity implements NavigationView.OnNavig
     }
 
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
+    }
 }

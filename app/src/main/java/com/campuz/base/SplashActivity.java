@@ -8,7 +8,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.campuz.R;
-import com.campuz.parent.HomeActivity;
 import com.campuz.parent.LoginActivity;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
