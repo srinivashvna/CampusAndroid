@@ -1,5 +1,6 @@
 package com.campuz.parentfragments;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,8 +8,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 
 import com.campuz.R;
+import com.campuz.base.BaseFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,7 +21,7 @@ import com.campuz.R;
  * Use the {@link LeaveFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LeaveFragment extends Fragment {
+public class LeaveFragment extends BaseFragment implements DatePickerDialog.OnDateSetListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -90,6 +93,11 @@ public class LeaveFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+
     }
 
     /**

@@ -1,15 +1,111 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
-    tools:context="com.campuz.parentfragments.LeaveFragment">
+    tools:context="com.campuz.parentfragments.LeaveFragment"
+    tools:ignore="MissingPrefix">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/item_leaves"
-         />
+        android:id="@+id/title"
+        fontPath="fonts/Roboto-Bold.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/_10sdp"
+        android:text="@string/campuzschool"
+        android:textColor="@color/dullgrey"
+        android:textSize="@dimen/_20ssp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/apply"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_below="@+id/title"
+        android:text="@string/applyleave"
+        android:textColor="@color/appblue"
+        android:textSize="@dimen/_37ssp" />
+
+    <TextView
+        android:id="@+id/select"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/apply"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_toStartOf="@+id/title"
+        android:text="@string/selectdate"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/select"
+        android:layout_alignStart="@+id/title"
+        android:background="@drawable/rounded_border_edittext"
+        android:ems="10"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:drawableLeft="@drawable/dairyreports"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/reason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/select"
+        android:layout_below="@+id/select"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:text="@string/reason" />
+
+    <EditText
+        android:id="@+id/et_desc"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_alignStart="@+id/reason"
+        android:layout_below="@+id/reason"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:background="@drawable/rounded_border_edittext"
+        android:gravity="start"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:hint="@string/reason_hint"
+        android:maxLength="250"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_18ssp" />
+
+    <Button
+        android:id="@+id/submitLeave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/et_desc"
+        android:layout_below="@+id/et_desc"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:padding="@dimen/_5sdp"
+        android:background="@color/appblue"
+        android:textColor="@color/white"
+        android:text="@string/submit" />
+
+
+    <Button
+        android:id="@+id/leaverqst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:layout_alignBaseline="@+id/submitLeave"
+        android:layout_alignBottom="@+id/submitLeave"
+        android:layout_alignEnd="@+id/et_desc"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@color/white"
+        android:background="@color/appblue"
+        android:text="@string/rqsthistory" />
+
+</RelativeLayout>

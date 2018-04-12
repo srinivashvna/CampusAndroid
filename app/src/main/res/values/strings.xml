@@ -36,11 +36,16 @@
     <string name="hello">Hello</string>
 
 
-    <!-- Strings related to Landing screen -->
     <string name="campuzschool">Campuz School</string>
     <string name="hellods">DS</string>
     <string name="ds">Srinivas</string>
     <string name="rollno">09NG1A1914</string>
+    <string name="applyleave">Apply Leave</string>
+    <string name="selectdate">Select Date:</string>
+    <string name="reason">Reason:</string>
+    <string name="reason_hint">enter reason here</string>
+    <string name="submit">Submit</string>
+    <string name="rqsthistory">Request History</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
