@@ -29,6 +29,7 @@ import com.campuz.parentfragments.AttendanceReportFragment;
 import com.campuz.parentfragments.DairyReportFragment;
 import com.campuz.parentfragments.HomeFragment;
 import com.campuz.parentfragments.LeaveFragment;
+import com.campuz.parentfragments.SubjectsSyllabusFragment;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -36,7 +37,8 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
  * Created by manikantad on 06-04-2018.
  */
 
-public class LandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, LeaveFragment.OnFragmentInteractionListener,HomeFragment.OnFragmentInteractionListener,DairyReportFragment.OnFragmentInteractionListener,AttendanceReportFragment.OnFragmentInteractionListener {
+public class LandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, LeaveFragment.OnFragmentInteractionListener,HomeFragment.OnFragmentInteractionListener,DairyReportFragment.OnFragmentInteractionListener,
+        AttendanceReportFragment.OnFragmentInteractionListener, SubjectsSyllabusFragment.OnFragmentInteractionListener  {
 
     private View header;
 
@@ -64,14 +66,14 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
         header = navigationView.getHeaderView(0);
 
         TextView txtName = (TextView)header. findViewById(R.id.txtName);
-        txtName.setText(R.string.ds);
+        txtName.setText(R.string.anil);
         ImageView imgProfilenav = (ImageView)header. findViewById(R.id.imgProfilenav);
         TextDrawable drawable = TextDrawable.builder().beginConfig()
                 .withBorder(10)
                 .bold()
                 .useFont(Typeface.DEFAULT)
                 .endConfig()
-                .buildRound("DS", getResources().getColor(R.color.appblue));
+                .buildRound("AK", getResources().getColor(R.color.appblue));
 
 
         imgProfilenav.setImageDrawable(drawable);
@@ -132,7 +134,8 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
         if (id == R.id.nav_location) {
 
         }else if (id == R.id.nav_syllubus) {
-
+            SubjectsSyllabusFragment subjectsSyllabusFragment = new SubjectsSyllabusFragment();
+            replaceFragment(subjectsSyllabusFragment, false);
         }else if (id == R.id.nav_attendance) {
             AttendanceReportFragment attendanceReportFragment = new AttendanceReportFragment();
             replaceFragment(attendanceReportFragment, false);

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <TableRow>
+
+        <ImageView
+            android:id="@+id/img_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:src="@drawable/ic_telugu" />
+
+        <TextView
+            android:id="@+id/tv_subjects"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:text="@string/subjects_syllabus" />
+
+    </TableRow>
+</TableLayout>
