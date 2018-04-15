@@ -25,6 +25,8 @@ import android.widget.TextView;
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.campuz.R;
 import com.campuz.base.BaseActivity;
+import com.campuz.parentfragments.AttendanceReportFragment;
+import com.campuz.parentfragments.DairyReportFragment;
 import com.campuz.parentfragments.HomeFragment;
 import com.campuz.parentfragments.LeaveFragment;
 
@@ -34,7 +36,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
  * Created by manikantad on 06-04-2018.
  */
 
-public class LandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, LeaveFragment.OnFragmentInteractionListener,HomeFragment.OnFragmentInteractionListener {
+public class LandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, LeaveFragment.OnFragmentInteractionListener,HomeFragment.OnFragmentInteractionListener,DairyReportFragment.OnFragmentInteractionListener,AttendanceReportFragment.OnFragmentInteractionListener {
 
     private View header;
 
@@ -80,7 +82,7 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
 
     public void init() {
         HomeFragment homeFragment = new HomeFragment();
-        replaceFragment(homeFragment, false);
+        replaceFragment(homeFragment, true);
     }
 
     // pass context to Calligraphy
@@ -128,14 +130,18 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
         int id = item.getItemId();
 
         if (id == R.id.nav_location) {
-            // Handle the camera action
-        } else if (id == R.id.nav_syllubus) {
 
-        } else if (id == R.id.nav_attendance) {
+        }else if (id == R.id.nav_syllubus) {
 
-        } else if (id == R.id.nav_leaves) {
+        }else if (id == R.id.nav_attendance) {
+            AttendanceReportFragment attendanceReportFragment = new AttendanceReportFragment();
+            replaceFragment(attendanceReportFragment, false);
+        }else if (id == R.id.nav_leaves) {
             LeaveFragment leaveFragment = new LeaveFragment();
-            replaceFragment(leaveFragment, true);
+            replaceFragment(leaveFragment, false);
+        }else if (id == R.id.nav_dairy) {
+            DairyReportFragment dairyReportFragment = new DairyReportFragment();
+            replaceFragment(dairyReportFragment, false);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
