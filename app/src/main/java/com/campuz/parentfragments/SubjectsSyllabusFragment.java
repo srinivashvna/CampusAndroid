@@ -9,10 +9,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.campuz.R;
 import com.campuz.modal.Subjects;
@@ -66,6 +68,21 @@ public class SubjectsSyllabusFragment extends Fragment {
 
         listview_subjects = (ListView) view.findViewById(R.id.listview_subjects);
         listview_subjects.setAdapter(new SubjectsAdapter(getActivity(), R.layout.fragments_subjects_list_items, sub_list));
+
+        listview_subjects.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Subjects subjects = (Subjects) parent.getItemAtPosition(position);
+                String selectedItem = subjects.getSubject();
+                Toast.makeText(getActivity(),"Selected Subject :"+selectedItem,Toast.LENGTH_SHORT).show();
+
+
+            }
+
+        });
+
 
         return view;
     }
