@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.campuz.R;
 import com.campuz.base.BaseActivity;
+import com.campuz.base.BaseFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,7 +21,7 @@ import com.campuz.base.BaseActivity;
  * Use the {@link AttendanceReportFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AttendanceReportFragment extends Fragment {
+public class AttendanceReportFragment extends BaseFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";

@@ -27,6 +27,7 @@ import com.campuz.parentfragments.DairyReportFragment;
 import com.campuz.parentfragments.HomeFragment;
 import com.campuz.parentfragments.LeaveFragment;
 import com.campuz.parentfragments.SubjectsSyllabusFragment;
+import com.campuz.parentfragments.SyllabusDetailsFragment;
 import com.campuz.util.Constants;
 
 import java.text.SimpleDateFormat;
@@ -123,6 +124,8 @@ public class BaseActivity extends AppCompatActivity {
             ((LeaveFragment) currentFragment).onBackPressed();
         } else if (currentFragment instanceof SubjectsSyllabusFragment) {
             ((SubjectsSyllabusFragment) currentFragment).onBackPressed();
+        } else if (currentFragment instanceof SyllabusDetailsFragment) {
+            ((SyllabusDetailsFragment) currentFragment).onBackPressed();
         } else {
             removeFragment();
         }

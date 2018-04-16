@@ -30,6 +30,7 @@ import com.campuz.parentfragments.DairyReportFragment;
 import com.campuz.parentfragments.HomeFragment;
 import com.campuz.parentfragments.LeaveFragment;
 import com.campuz.parentfragments.SubjectsSyllabusFragment;
+import com.campuz.parentfragments.SyllabusDetailsFragment;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -38,7 +39,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
  */
 
 public class LandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, LeaveFragment.OnFragmentInteractionListener,HomeFragment.OnFragmentInteractionListener,DairyReportFragment.OnFragmentInteractionListener,
-        AttendanceReportFragment.OnFragmentInteractionListener, SubjectsSyllabusFragment.OnFragmentInteractionListener  {
+        AttendanceReportFragment.OnFragmentInteractionListener, SubjectsSyllabusFragment.OnFragmentInteractionListener, SyllabusDetailsFragment.OnFragmentInteractionListener  {
 
     private View header;
 

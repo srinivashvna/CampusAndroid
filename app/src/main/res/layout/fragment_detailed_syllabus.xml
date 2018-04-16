@@ -56,14 +56,12 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/listview_subjects"
+        android:id="@+id/listview_syllabus"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/_40sdp"
-        android:layout_marginRight="@dimen/_40sdp"
         android:layout_marginBottom="@dimen/_5sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:divider="@android:color/transparent"
-        android:dividerHeight="10.0sp" />
+        android:dividerHeight="@dimen/_10sdp" />
 
 </LinearLayout>
