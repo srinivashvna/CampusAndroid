@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.campuz.R;
+import com.campuz.base.BaseActivity;
 import com.campuz.modal.Subjects;
 
 import java.util.ArrayList;
@@ -137,5 +138,9 @@ public class SubjectsSyllabusFragment extends Fragment {
             return row;
         }
 
+    }
+
+    public void onBackPressed() {
+        ((BaseActivity) getActivity()).removeFragment();
     }
 }
