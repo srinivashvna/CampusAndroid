@@ -135,16 +135,16 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
 
         }else if (id == R.id.nav_syllubus) {
             SubjectsSyllabusFragment subjectsSyllabusFragment = new SubjectsSyllabusFragment();
-            replaceFragment(subjectsSyllabusFragment, false);
+            replaceFragment(subjectsSyllabusFragment, true);
         }else if (id == R.id.nav_attendance) {
             AttendanceReportFragment attendanceReportFragment = new AttendanceReportFragment();
-            replaceFragment(attendanceReportFragment, false);
+            replaceFragment(attendanceReportFragment, true);
         }else if (id == R.id.nav_leaves) {
             LeaveFragment leaveFragment = new LeaveFragment();
-            replaceFragment(leaveFragment, false);
+            replaceFragment(leaveFragment, true);
         }else if (id == R.id.nav_dairy) {
             DairyReportFragment dairyReportFragment = new DairyReportFragment();
-            replaceFragment(dairyReportFragment, false);
+            replaceFragment(dairyReportFragment, true);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

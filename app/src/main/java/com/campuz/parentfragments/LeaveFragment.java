@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.DatePicker;
 
 import com.campuz.R;
+import com.campuz.base.BaseActivity;
 import com.campuz.base.BaseFragment;
 
 /**
@@ -113,5 +114,9 @@ public class LeaveFragment extends BaseFragment implements DatePickerDialog.OnDa
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public void onBackPressed() {
+        ((BaseActivity) getActivity()).removeFragment();
     }
 }

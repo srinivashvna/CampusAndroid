@@ -22,6 +22,11 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.campuz.R;
+import com.campuz.parentfragments.AttendanceReportFragment;
+import com.campuz.parentfragments.DairyReportFragment;
+import com.campuz.parentfragments.HomeFragment;
+import com.campuz.parentfragments.LeaveFragment;
+import com.campuz.parentfragments.SubjectsSyllabusFragment;
 import com.campuz.util.Constants;
 
 import java.text.SimpleDateFormat;
@@ -105,6 +110,24 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.container_layout);
+        if (currentFragment instanceof AttendanceReportFragment) {
+            ((AttendanceReportFragment) currentFragment).onBackPressed();
+        } else if (currentFragment instanceof DairyReportFragment) {
+            ((DairyReportFragment) currentFragment).onBackPressed();
+        } else if (currentFragment instanceof HomeFragment) {
+            ((HomeFragment) currentFragment).onBackPressed();
+        } else if (currentFragment instanceof LeaveFragment) {
+            ((LeaveFragment) currentFragment).onBackPressed();
+        } else if (currentFragment instanceof SubjectsSyllabusFragment) {
+            ((SubjectsSyllabusFragment) currentFragment).onBackPressed();
+        } else {
+            removeFragment();
+        }
+    }
+
     /**
      * This method removes the Fragment from backstack
      */
@@ -113,6 +136,9 @@ public class BaseActivity extends AppCompatActivity {
         if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
             getSupportFragmentManager().popBackStack();
             Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.container_layout);
+            if (currentFragment instanceof HomeFragment) {
+                finish();
+            }
         } else {
             finish();
         }
