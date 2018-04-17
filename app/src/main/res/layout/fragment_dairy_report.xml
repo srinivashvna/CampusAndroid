@@ -54,10 +54,14 @@
         android:text="" />
 
     <ListView
+        android:id="@+id/diaryList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_ll"
+        android:layout_below="@+id/select"
         android:layout_margin="@dimen/_5sdp"
-        android:layout_below="@+id/editTextDate">
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/_10sdp">
 
     </ListView>
 
