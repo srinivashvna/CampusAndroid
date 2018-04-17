@@ -85,7 +85,7 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
 
     public void init() {
         HomeFragment homeFragment = new HomeFragment();
-        replaceFragment(homeFragment, true);
+        replaceFragment(homeFragment, false);
     }
 
     // pass context to Calligraphy

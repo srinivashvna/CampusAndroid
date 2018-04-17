@@ -114,21 +114,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.container_layout);
-        if (currentFragment instanceof AttendanceReportFragment) {
-            ((AttendanceReportFragment) currentFragment).onBackPressed();
-        } else if (currentFragment instanceof DairyReportFragment) {
-            ((DairyReportFragment) currentFragment).onBackPressed();
-        } else if (currentFragment instanceof HomeFragment) {
-            ((HomeFragment) currentFragment).onBackPressed();
-        } else if (currentFragment instanceof LeaveFragment) {
-            ((LeaveFragment) currentFragment).onBackPressed();
-        } else if (currentFragment instanceof SubjectsSyllabusFragment) {
-            ((SubjectsSyllabusFragment) currentFragment).onBackPressed();
-        } else if (currentFragment instanceof SyllabusDetailsFragment) {
-            ((SyllabusDetailsFragment) currentFragment).onBackPressed();
-        } else {
-            removeFragment();
-        }
+        removeFragment();
     }
 
     /**
@@ -139,9 +125,6 @@ public class BaseActivity extends AppCompatActivity {
         if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
             getSupportFragmentManager().popBackStack();
             Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.container_layout);
-            if (currentFragment instanceof HomeFragment) {
-                finish();
-            }
         } else {
             finish();
         }
