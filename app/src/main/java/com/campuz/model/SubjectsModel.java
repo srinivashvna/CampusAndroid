@@ -1,11 +1,11 @@
-package com.campuz.modal;
+package com.campuz.model;
 
-public class Subjects {
+public class SubjectsModel {
 
     private int subject_id;
     private String subject;
 
-    public Subjects(int subject_id, String subject) {
+    public SubjectsModel(int subject_id, String subject) {
         this.subject_id = subject_id;
         this.subject = subject;
     }

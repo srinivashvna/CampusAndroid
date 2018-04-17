@@ -1,8 +1,5 @@
 package com.campuz.parentfragments;
 
-import android.graphics.Color;
-import android.net.LinkAddress;
-import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,25 +7,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.campuz.R;
+import com.campuz.adapter.SubjectsAdapter;
 import com.campuz.base.BaseActivity;
 import com.campuz.base.BaseFragment;
-import com.campuz.modal.Subjects;
+import com.campuz.model.SubjectsModel;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class SubjectsSyllabusFragment extends BaseFragment {
     private static final String ARG_PARAM1 = "param1";
 
-    ArrayList<Subjects> sub_list = new ArrayList<>();
+    ArrayList<SubjectsModel> sub_list = new ArrayList<>();
     ListView listview_subjects;
     String[] subject_names = {"Telugu", "Hindi", "English", "Maths", "Science", "Social", "GK", "Computers"};
     Integer[] subject_img = {
@@ -57,16 +50,16 @@ public class SubjectsSyllabusFragment extends BaseFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        for (int i = 0; i < subject_names.length; i++) {
+            SubjectsModel items = new SubjectsModel(subject_img[i], subject_names[i]);
+            sub_list.add(items);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_subjects_syllabus,container,false);
-        for (int i = 0; i < subject_names.length; i++) {
-            Subjects items = new Subjects(subject_img[i], subject_names[i]);
-            sub_list.add(items);
-        }
 
         listview_subjects = (ListView) view.findViewById(R.id.listview_subjects);
         listview_subjects.setAdapter(new SubjectsAdapter(getActivity(), R.layout.fragments_subjects_list_items, sub_list));
@@ -76,7 +69,7 @@ public class SubjectsSyllabusFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Subjects subjects = (Subjects) parent.getItemAtPosition(position);
+                SubjectsModel subjects = (SubjectsModel) parent.getItemAtPosition(position);
                 String selectedItem = subjects.getSubject();
                 Toast.makeText(getActivity(),"Selected Subject :"+selectedItem,Toast.LENGTH_SHORT).show();
 
@@ -105,54 +98,6 @@ public class SubjectsSyllabusFragment extends BaseFragment {
 
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
-
-    }
-
-
-    public class SubjectsAdapter extends ArrayAdapter<Subjects> {
-        List<Subjects> list;
-        public SubjectsAdapter(Context context, int resouceId, List<Subjects> list) {
-            super(context, resouceId, list);
-            this.list = list;
-            // TODO Auto-generated constructor stub
-        }
-
-        @Override
-        public View getDropDownView(int position, View convertView, ViewGroup parent) {
-            // TODO Auto-generated method stub
-            return getCustomView(position, convertView, parent);
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            // TODO Auto-generated method stub
-
-            return getCustomView(position, convertView, parent);
-        }
-
-        public View getCustomView(int position, View convertView, ViewGroup parent) {
-            // TODO Auto-generated method stub
-            //return super.getView(position, convertView, parent);
-
-            Subjects subs = list.get(position);
-
-            LayoutInflater inflater = getActivity().getLayoutInflater();
-            View row = inflater.inflate(R.layout.fragments_subjects_list_items, parent, false);
-            TextView label = (TextView) row.findViewById(R.id.tv_subjects);
-            ImageView ims_subject = (ImageView) row.findViewById(R.id.img_subject);
-            ims_subject.setImageResource(subs.getSubject_id());
-            label.setText(subs.getSubject());
-
-            if (position % 2 == 1) {
-                row.setBackgroundColor(getResources().getColor(R.color.appblue));
-
-            } else {
-                row.setBackgroundColor(getResources().getColor(R.color.homebuttoncolors));
-
-            }
-
-            return row;
-        }
 
     }
 

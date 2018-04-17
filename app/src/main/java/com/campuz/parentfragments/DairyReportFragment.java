@@ -7,10 +7,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import com.campuz.adapter.DiaryReportAdapter;
 
 import com.campuz.R;
 import com.campuz.base.BaseActivity;
 import com.campuz.base.BaseFragment;
+import com.campuz.model.DiaryModel;
+import com.campuz.model.SyllabusModel;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +29,13 @@ import com.campuz.base.BaseFragment;
  * create an instance of this fragment.
  */
 public class DairyReportFragment extends BaseFragment {
+
+    ArrayList<DiaryModel> chapter_list = new ArrayList<>();
+    ListView listview_diary;
+    String[] subject_names = {"Telugu", "Hindi", "English", "Maths", "Science", "Social"};
+    String[] home_work = {"Complete Poems", "Complete Poems", "Complete Poems", "Complete Poems", "Complete Poems", "Complete Poems"};
+
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -61,13 +76,31 @@ public class DairyReportFragment extends BaseFragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        for (int i = 0; i < subject_names.length; i++) {
+            DiaryModel items = new DiaryModel(subject_names[i], home_work[i]);
+            chapter_list.add(items);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_dairy_report, container, false);
+
+        listview_diary = (ListView) view.findViewById(R.id.diaryList);
+        listview_diary.setAdapter(new DiaryReportAdapter(getActivity(), R.layout.fragments_diary_report_item, chapter_list));
+
+        listview_diary.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+        });
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dairy_report, container, false);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

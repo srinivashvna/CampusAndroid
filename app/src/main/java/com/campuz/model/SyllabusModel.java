@@ -1,11 +1,11 @@
-package com.campuz.modal;
+package com.campuz.model;
 
-public class Syllabus {
+public class SyllabusModel {
 
     private String chapter;
     private String chapter_title;
 
-    public Syllabus(String chapter, String chapter_title) {
+    public SyllabusModel(String chapter, String chapter_title) {
         this.chapter = chapter;
         this.chapter_title = chapter_title;
     }
