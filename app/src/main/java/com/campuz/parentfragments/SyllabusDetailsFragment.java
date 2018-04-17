@@ -65,6 +65,7 @@ public class SyllabusDetailsFragment extends BaseFragment {
                 String selectedItem = syllabus.getChapter();
                 Toast.makeText(getActivity(),"Selected Subject :"+selectedItem,Toast.LENGTH_SHORT).show();
 
+                //commented
                /* SyllabusDetailsFragment syllabusFragment = new SyllabusDetailsFragment();
                 ((BaseActivity)getActivity()).replaceFragment(syllabusFragment, true);*/
             }
