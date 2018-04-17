@@ -27,6 +27,7 @@ import com.campuz.R;
 import com.campuz.base.BaseActivity;
 import com.campuz.parentfragments.AttendanceReportFragment;
 import com.campuz.parentfragments.DairyReportFragment;
+import com.campuz.parentfragments.ExamsFragment;
 import com.campuz.parentfragments.HomeFragment;
 import com.campuz.parentfragments.LeaveFragment;
 import com.campuz.parentfragments.SubjectsSyllabusFragment;
@@ -39,7 +40,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
  */
 
 public class LandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, LeaveFragment.OnFragmentInteractionListener,HomeFragment.OnFragmentInteractionListener,DairyReportFragment.OnFragmentInteractionListener,
-        AttendanceReportFragment.OnFragmentInteractionListener, SubjectsSyllabusFragment.OnFragmentInteractionListener, SyllabusDetailsFragment.OnFragmentInteractionListener  {
+        AttendanceReportFragment.OnFragmentInteractionListener, SubjectsSyllabusFragment.OnFragmentInteractionListener, SyllabusDetailsFragment.OnFragmentInteractionListener, ExamsFragment.OnFragmentInteractionListener  {
 
     private View header;
 
@@ -146,6 +147,9 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
         }else if (id == R.id.nav_dairy) {
             DairyReportFragment dairyReportFragment = new DairyReportFragment();
             replaceFragment(dairyReportFragment, true);
+        }else if (id == R.id.nav_exams) {
+            ExamsFragment examsFragment = new ExamsFragment();
+            replaceFragment(examsFragment, true);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

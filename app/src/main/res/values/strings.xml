@@ -51,6 +51,7 @@
     <string name="attendance_report">Attendance Report</string>
     <string name="subjects_syllabus">Subjects</string>
     <string name="syllabus">Syllabus</string>
+    <string name="exams">Exams</string>
     <string name="checkbox_notstarted">Not yet Started</string>
     <string name="checkbox_completed">Completed</string>
 
