@@ -29,7 +29,6 @@
             fontPath="fonts/Roboto-Bold.ttf"
             android:layout_margin="@dimen/_5sdp"
             android:textStyle="bold"
-            android:fontFamily=""
             android:textSize="@dimen/_16sdp"
             />
 

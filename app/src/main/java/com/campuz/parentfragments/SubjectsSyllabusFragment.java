@@ -40,7 +40,7 @@ public class SubjectsSyllabusFragment extends BaseFragment {
     public SubjectsSyllabusFragment() {
         // Required empty public constructor
     }
-    public static SubjectsSyllabusFragment newInstance(ListView listview_subjects) {
+    public static SubjectsSyllabusFragment newInstance(String param1, String param2) {
         SubjectsSyllabusFragment fragment = new SubjectsSyllabusFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
@@ -68,11 +68,6 @@ public class SubjectsSyllabusFragment extends BaseFragment {
         {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                SubjectsModel subjects = (SubjectsModel) parent.getItemAtPosition(position);
-                String selectedItem = subjects.getSubject();
-                Toast.makeText(getActivity(),"Selected Subject :"+selectedItem,Toast.LENGTH_SHORT).show();
-
                 SyllabusDetailsFragment syllabusFragment = new SyllabusDetailsFragment();
                 ((BaseActivity)getActivity()).replaceFragment(syllabusFragment, true);
             }

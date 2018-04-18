@@ -1,11 +1,11 @@
-package com.campuz.modal;
+package com.campuz.model;
 
-public class Exams {
+public class ExamsModel {
 
     private String tests;
     private String test_status;
 
-    public Exams(String tests, String test_status) {
+    public ExamsModel(String tests, String test_status) {
         this.tests = tests;
         this.test_status = test_status;
     }

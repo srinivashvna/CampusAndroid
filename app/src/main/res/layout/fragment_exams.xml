@@ -37,8 +37,6 @@
         android:id="@+id/listview_exams"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/_40sdp"
-        android:layout_marginRight="@dimen/_40sdp"
         android:layout_marginBottom="@dimen/_5sdp"
         android:divider="@android:color/transparent"
         android:dividerHeight="@dimen/_5sdp" />

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_60sdp"
+    android:layout_height="@dimen/_70sdp"
     tools:ignore="MissingPrefix"
     android:orientation="horizontal"
     android:layout_gravity="center">
@@ -31,7 +31,7 @@
             fontPath="fonts/Roboto-Bold.ttf"
             android:textStyle="bold"
             android:fontFamily=""
-            android:textSize="@dimen/_18sdp"
+            android:textSize="@dimen/_16sdp"
             />
 
         <TextView

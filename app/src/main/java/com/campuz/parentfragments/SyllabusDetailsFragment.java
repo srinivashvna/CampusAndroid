@@ -32,7 +32,7 @@ public class SyllabusDetailsFragment extends BaseFragment {
         // Required empty public constructor
     }
 
-    public static SyllabusDetailsFragment newInstance(ListView listview_subjects) {
+    public static SyllabusDetailsFragment newInstance(String param1, String param2) {
         SyllabusDetailsFragment fragment = new SyllabusDetailsFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
