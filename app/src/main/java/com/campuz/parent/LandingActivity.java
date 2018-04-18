@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -132,22 +133,23 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.container_layout);
+        removeAllFragments();
         if (id == R.id.nav_location) {
 
-        }else if (id == R.id.nav_syllubus) {
+        }else if (id == R.id.nav_syllubus&& !(currentFragment instanceof SubjectsSyllabusFragment)) {
             SubjectsSyllabusFragment subjectsSyllabusFragment = new SubjectsSyllabusFragment();
             replaceFragment(subjectsSyllabusFragment, true);
-        }else if (id == R.id.nav_attendance) {
+        }else if (id == R.id.nav_attendance&& !(currentFragment instanceof AttendanceReportFragment)) {
             AttendanceReportFragment attendanceReportFragment = new AttendanceReportFragment();
             replaceFragment(attendanceReportFragment, true);
-        }else if (id == R.id.nav_leaves) {
+        }else if (id == R.id.nav_leaves&& !(currentFragment instanceof LeaveFragment)) {
             LeaveFragment leaveFragment = new LeaveFragment();
             replaceFragment(leaveFragment, true);
-        }else if (id == R.id.nav_dairy) {
+        }else if (id == R.id.nav_dairy&& !(currentFragment instanceof DairyReportFragment)) {
             DairyReportFragment dairyReportFragment = new DairyReportFragment();
             replaceFragment(dairyReportFragment, true);
-        }else if (id == R.id.nav_exams) {
+        }else if (id == R.id.nav_exams&& !(currentFragment instanceof ExamsFragment)) {
             ExamsFragment examsFragment = new ExamsFragment();
             replaceFragment(examsFragment, true);
         }

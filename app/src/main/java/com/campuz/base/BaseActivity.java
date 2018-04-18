@@ -9,6 +9,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -113,7 +114,6 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.container_layout);
         removeFragment();
     }
 
@@ -124,9 +124,23 @@ public class BaseActivity extends AppCompatActivity {
     public void removeFragment() {
         if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
             getSupportFragmentManager().popBackStack();
-            Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.container_layout);
         } else {
             finish();
+        }
+
+    }
+
+    public void removeAllFragments() {
+        try {
+            FragmentManager fm = getSupportFragmentManager();
+            for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
+                Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.container_layout);
+                if(!(currentFragment instanceof HomeFragment)){
+                    fm.popBackStack();
+                }
+            }
+        } catch (Exception e) {
+            Log.e("replace error", e.getMessage() + "replace fragment error");
         }
 
     }
