@@ -1,9 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="MissingPrefix"
-    tools:context="com.campuz.parentfragments.AttendanceReportFragment">
+    tools:context="com.campuz.parentfragments.AttendanceReportFragment"
+    tools:ignore="MissingPrefix">
 
     <TextView
         android:id="@+id/title"
@@ -21,9 +22,9 @@
         fontPath="fonts/Roboto-Regular.ttf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/_10sdp"
-        android:layout_below="@+id/title"
         android:text="@string/attendance_report"
         android:textColor="@color/appblue"
         android:textSize="@dimen/_37ssp" />
@@ -42,14 +43,23 @@
 
     <EditText
         android:id="@+id/editTextDate"
+        fontPath="fonts/Roboto-Regular.ttf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/select"
         android:layout_alignStart="@+id/title"
         android:background="@drawable/rounded_border_edittext"
-        android:ems="10"
-        fontPath="fonts/Roboto-Regular.ttf"
         android:drawableLeft="@drawable/dairyreports"
+        android:ems="10"
         android:inputType="textPersonName"
         android:text="" />
+
+    <com.applandeo.materialcalendarview.CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/editTextDate"
+        android:layout_margin="@dimen/_10sdp"
+        app:datePicker="false"
+        app:headerColor="@color/appblue" />
 </RelativeLayout>

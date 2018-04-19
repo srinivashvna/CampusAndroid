@@ -9,9 +9,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.applandeo.materialcalendarview.CalendarView;
+import com.applandeo.materialcalendarview.DatePicker;
+import com.applandeo.materialcalendarview.EventDay;
+import com.applandeo.materialcalendarview.builders.DatePickerBuilder;
+import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
+import com.applandeo.materialcalendarview.listeners.OnSelectDateListener;
 import com.campuz.R;
 import com.campuz.base.BaseActivity;
 import com.campuz.base.BaseFragment;
+
+import java.util.Calendar;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,7 +30,7 @@ import com.campuz.base.BaseFragment;
  * Use the {@link AttendanceReportFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AttendanceReportFragment extends BaseFragment {
+public class AttendanceReportFragment extends BaseFragment implements OnDayClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -67,8 +76,12 @@ public class AttendanceReportFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_attendance_report, container, false);
+        CalendarView calendarView = (CalendarView)view.findViewById(R.id.calendarView);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_attendance_report, container, false);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -93,6 +106,11 @@ public class AttendanceReportFragment extends BaseFragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onDayClick(EventDay eventDay) {
+
     }
 
     /**
