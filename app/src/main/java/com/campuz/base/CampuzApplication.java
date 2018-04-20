@@ -23,7 +23,7 @@ public class CampuzApplication extends Application {
 
 //For Custom font. By default Lato-Regular will be the default font for through out the app
         CalligraphyConfig calligraphyConfig = new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Lato-Bold.ttf")
+                .setDefaultFontPath("fonts/Roboto-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build();
 

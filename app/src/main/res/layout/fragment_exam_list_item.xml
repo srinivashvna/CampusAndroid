@@ -2,10 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_70sdp"
+    android:layout_height="@dimen/_60sdp"
     tools:ignore="MissingPrefix"
-    android:orientation="horizontal"
-    android:layout_gravity="center">
+    android:orientation="horizontal">
 
 
     <CheckBox
@@ -22,7 +21,7 @@
         android:background="@drawable/bg_syllabus_details">
 
         <TextView
-            android:id="@+id/tv_test_title"
+            android:id="@+id/tv_test_titles"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -31,11 +30,11 @@
             fontPath="fonts/Roboto-Bold.ttf"
             android:textStyle="bold"
             android:fontFamily=""
-            android:textSize="@dimen/_16sdp"
+            android:textSize="@dimen/_14sdp"
             />
 
         <TextView
-            android:id="@+id/tv_test_status"
+            android:id="@+id/tv_tests_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -44,7 +43,7 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:text="@string/subjects_syllabus"
             fontPath="fonts/Roboto-Italic.ttf"
-            android:textSize="@dimen/_14sdp" />
+            android:textSize="@dimen/_12sdp" />
 
 
     </LinearLayout>

@@ -21,8 +21,8 @@ import java.util.ArrayList;
 public class ExamsFragment extends BaseFragment {
     private static final String ARG_PARAM1 = "param1";
 
-    ArrayList<ExamsModel> test_list = new ArrayList<>();
-    ListView listview_tests;
+    ArrayList<ExamsModel> tests_list = new ArrayList<>();
+    ListView lv_test;
     String[] test = {"Unit Test - 1", "Unit Test - 2", "Quarterly", "Half Yearly", "Annual"};
     String[] test_status = {"Results", "Syllabus", "Syllabus", "Syllabus", "Syllabus"};
 
@@ -44,7 +44,7 @@ public class ExamsFragment extends BaseFragment {
         super.onCreate(savedInstanceState);
         for (int i = 0; i < test.length; i++) {
             ExamsModel items = new ExamsModel(test[i], test_status[i]);
-            test_list.add(items);
+            tests_list.add(items);
         }
     }
 
@@ -53,16 +53,32 @@ public class ExamsFragment extends BaseFragment {
 
         View view = inflater.inflate(R.layout.fragment_exams, container, false);
 
-        listview_tests = (ListView) view.findViewById(R.id.listview_exams);
-        listview_tests.setAdapter(new ExamsAdapter(getActivity(), R.layout.fragment_exam_list_item, test_list));
+        lv_test = (ListView) view.findViewById(R.id.listview_exams);
+        lv_test.setAdapter(new ExamsAdapter(getActivity(), R.layout.fragment_exam_list_item, tests_list));
 
-        listview_tests.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lv_test.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               /* SyllabusDetailsFragment syllabusFragment = new SyllabusDetailsFragment();
-                ((BaseActivity) getActivity()).replaceFragment(syllabusFragment, true);*/
+// Click Not working
+            /*    ExamsModel examsModel = (ExamsModel) parent.getItemAtPosition(position);
+                String selectedItem = examsModel.getTests();
+                Toast.makeText(getActivity(),"Selected Subject :"+selectedItem,Toast.LENGTH_SHORT).show();*/
+
+                ExamDetailedFragment examdetailFragment = new ExamDetailedFragment();
+                ((BaseActivity) getActivity()).replaceFragment(examdetailFragment, true);
+
+
             }
         });
+
+       /* listview_tests.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getActivity(),"Select Option :",Toast.LENGTH_SHORT).show();
+
+
+            }
+        });*/
         return view;
     }
 

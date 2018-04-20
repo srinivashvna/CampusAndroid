@@ -16,7 +16,7 @@ import java.util.List;
  * Created by manikantad on 18-04-2018.
  */
 
-public class SyllabusAdapter extends ArrayAdapter<SyllabusModel> {
+public class SyllabusAdapter extends    ArrayAdapter<SyllabusModel> {
     List<SyllabusModel> list;
     public SyllabusAdapter(Context context, int resouceId, List<SyllabusModel> list) {
         super(context, resouceId, list);

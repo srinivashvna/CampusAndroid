@@ -64,8 +64,7 @@ public class SubjectsSyllabusFragment extends BaseFragment {
         listview_subjects = (ListView) view.findViewById(R.id.listview_subjects);
         listview_subjects.setAdapter(new SubjectsAdapter(getActivity(), R.layout.fragments_subjects_list_items, sub_list));
 
-        listview_subjects.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+        listview_subjects.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 SyllabusDetailsFragment syllabusFragment = new SyllabusDetailsFragment();

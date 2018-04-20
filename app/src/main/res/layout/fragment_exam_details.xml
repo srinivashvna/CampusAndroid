@@ -28,7 +28,7 @@
         android:layout_margin="@dimen/_10sdp"
         android:layout_below="@+id/title"
         android:layout_gravity="center"
-        android:text="@string/exams"
+        android:text="@string/exam_details"
         android:textColor="@color/appblue"
         android:textSize="@dimen/_37ssp"
         />
@@ -41,26 +41,20 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/checkbox_notstarted"
+            android:text="@string/completed"
             android:textSize="@dimen/_14sdp"
             android:button="@drawable/check_uncheck"/>
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:text="@string/checkbox_completed"
-            android:textSize="@dimen/_14sdp"
-            android:button="@drawable/check_checked"/>
 
     </LinearLayout>
 
     <ListView
-        android:id="@+id/listview_exams"
+        android:id="@+id/listview_exam_details"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:divider="@android:color/transparent"
-        android:dividerHeight="@dimen/_5sdp" />
+        android:dividerHeight="@dimen/_10sdp" />
 
 </LinearLayout>

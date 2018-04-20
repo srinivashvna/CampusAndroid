@@ -18,6 +18,7 @@ import java.util.List;
 
 public class ExamsAdapter extends ArrayAdapter<ExamsModel> {
     List<ExamsModel> list;
+
     public ExamsAdapter(Context context, int resouceId, List<ExamsModel> list) {
         super(context, resouceId, list);
         this.list = list;
@@ -41,12 +42,12 @@ public class ExamsAdapter extends ArrayAdapter<ExamsModel> {
         // TODO Auto-generated method stub
         //return super.getView(position, convertView, parent);
 
-        ExamsModel subs = list.get(position);
 
         LayoutInflater inflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View row = inflater.inflate(R.layout.fragment_exam_list_item, parent, false);
-        TextView label = (TextView) row.findViewById(R.id.tv_test_title);
-        TextView label1 = (TextView) row.findViewById(R.id.tv_test_status);
+        ExamsModel subs = list.get(position);
+        TextView label = (TextView) row.findViewById(R.id.tv_test_titles);
+        TextView label1 = (TextView) row.findViewById(R.id.tv_tests_status);
         label.setText(subs.getTests());
         label1.setText(subs.getTest_status());
 
