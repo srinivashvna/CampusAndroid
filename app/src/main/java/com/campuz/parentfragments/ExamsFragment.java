@@ -59,26 +59,10 @@ public class ExamsFragment extends BaseFragment {
         lv_test.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-// Click Not working
-            /*    ExamsModel examsModel = (ExamsModel) parent.getItemAtPosition(position);
-                String selectedItem = examsModel.getTests();
-                Toast.makeText(getActivity(),"Selected Subject :"+selectedItem,Toast.LENGTH_SHORT).show();*/
-
-                ExamDetailedFragment examdetailFragment = new ExamDetailedFragment();
-                ((BaseActivity) getActivity()).replaceFragment(examdetailFragment, true);
-
-
+                ExamDetailedFragment examDetailFragment = new ExamDetailedFragment();
+                ((BaseActivity) getActivity()).replaceFragment(examDetailFragment, true);
             }
         });
-
-       /* listview_tests.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(),"Select Option :",Toast.LENGTH_SHORT).show();
-
-
-            }
-        });*/
         return view;
     }
 

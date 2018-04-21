@@ -58,6 +58,7 @@
     <string name="completed">Completed</string>
     <string name="checkbox_completed">Completed</string>
     <string name="subject">Subject</string>
+    <string name="timetable">TimeTable</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -70,6 +71,10 @@
     <string name="science">Science</string>
     <string name="GK">gk</string>
     <string name="computers">Computers</string>
+    <string name="date">08</string>
+    <string name="month">June 2018</string>
+    <string name="time">10:00 AM</string>
+
 
 
 </resources>

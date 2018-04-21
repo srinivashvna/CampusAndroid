@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -47,23 +48,20 @@ public class ExamDetailsAdapter  extends ArrayAdapter<ExamDetailsModel> {
             LayoutInflater inflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View row = inflater.inflate(R.layout.fragment_exam_details_list_item, parent, false);
             RelativeLayout rl_mainLayout = (RelativeLayout) row.findViewById(R.id.rl_mainLayout);
-            RelativeLayout bg_date = (RelativeLayout) row.findViewById(R.id.bg_date);
+            LinearLayout bg_date = (LinearLayout) row.findViewById(R.id.bg_date);
             ImageView iv_triangle = (ImageView) row.findViewById(R.id.iv_triangle);
-            TextView label = (TextView) row.findViewById(R.id.tv_chapter);
-            TextView label1 = (TextView) row.findViewById(R.id.tv_chapter_title);
+            TextView label = (TextView) row.findViewById(R.id.tv_subject);
+            TextView label1 = (TextView) row.findViewById(R.id.subDetails);
             label.setText(subs.getSubject_name());
             label1.setText(subs.getChapter_title());
 
             if (position % 2 == 1) {
                 rl_mainLayout.setBackgroundColor(mContext.getResources().getColor(R.color.appblue));
                 iv_triangle.setBackgroundColor(mContext.getResources().getColor(R.color.appblue));
-                bg_date.setBackgroundColor(mContext.getResources().getColor(R.color.appblue));
-
-            } else {
-                row.setBackgroundColor(mContext.getResources().getColor(R.color.track));
-                iv_triangle.setBackgroundColor(mContext.getResources().getColor(R.color.homebuttoncolors));
                 bg_date .setBackgroundColor(mContext.getResources().getColor(R.color.homebuttoncolors));
 
+            } else {
+                bg_date .setBackgroundColor(mContext.getResources().getColor(R.color.homebuttoncolors));
             }
 
             return row;

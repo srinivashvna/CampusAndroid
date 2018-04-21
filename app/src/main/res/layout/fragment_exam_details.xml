@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/_10sdp"
+        android:layout_margin="@dimen/_5sdp"
         android:text="@string/campuzschool"
         android:textColor="@color/dullgrey"
         android:textSize="@dimen/_20ssp"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/_10sdp"
+        android:layout_margin="@dimen/_5sdp"
         android:layout_below="@+id/title"
         android:layout_gravity="center"
         android:text="@string/exam_details"
@@ -52,9 +52,8 @@
         android:id="@+id/listview_exam_details"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/_5sdp"
-        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_margin="@dimen/_5sdp"
         android:divider="@android:color/transparent"
-        android:dividerHeight="@dimen/_10sdp" />
+        android:dividerHeight="@dimen/_5sdp" />
 
 </LinearLayout>

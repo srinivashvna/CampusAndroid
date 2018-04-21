@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="MissingPrefix"
-    android:orientation="vertical">
+    tools:context="com.campuz.parentfragments.TimeTableFragment"
+    tools:ignore="MissingPrefix">
 
     <TextView
         android:id="@+id/title"
@@ -15,32 +14,27 @@
         android:layout_margin="@dimen/_5sdp"
         android:text="@string/campuzschool"
         android:textColor="@color/dullgrey"
-        android:textSize="@dimen/_20ssp"
-        android:layout_gravity="center"
-         />
+        android:textSize="@dimen/_20ssp" />
 
     <TextView
-        android:id="@+id/apply"
+        android:id="@+id/timetable"
         fontPath="fonts/Roboto-Regular.ttf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/_5sdp"
-        android:layout_below="@+id/title"
-        android:layout_gravity="center"
-        android:text="@string/subjects_syllabus"
+        android:text="@string/timetable"
         android:textColor="@color/appblue"
-        android:textSize="@dimen/_37ssp"
-         />
+        android:textSize="@dimen/_37ssp" />
 
     <ListView
-        android:id="@+id/listview_subjects"
-        android:layout_width="match_parent"
+        android:id="@+id/listview_timetable"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/_40sdp"
-        android:layout_marginRight="@dimen/_40sdp"
-        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_below="@+id/timetable"
+        android:layout_margin="@dimen/_5sdp"
         android:divider="@android:color/transparent"
         android:dividerHeight="@dimen/_5sdp" />
 
-</LinearLayout>
+</RelativeLayout>

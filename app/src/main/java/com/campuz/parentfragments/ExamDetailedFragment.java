@@ -27,7 +27,7 @@ public class ExamDetailedFragment extends BaseFragment {
     ArrayList<ExamDetailsModel> exam_list = new ArrayList<>();
     ListView listview_exam_details;
     String[] subject_names = {"Telugu", "Hindi", "English", "Maths", "Science", "Social", "GK", "Computers"};
-    String[] chapter_titles = {"This is Chapter One", "This is Chapter Two", "This is Chapter Three", "This is Chapter Four", "This is Chapter Five", "This is Chapter Six"};
+    String[] chapter_titles = {"This is Chapter One", "This is Chapter Two", "This is Chapter Three", "This is Chapter Four", "This is Chapter Five", "This is Chapter Six", "This is Chapter Six", "This is Chapter Six"};
 
     private ExamDetailedFragment.OnFragmentInteractionListener mListener;
 
@@ -63,15 +63,6 @@ public class ExamDetailedFragment extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-             /*   SyllabusModel syllabus = (SyllabusModel) parent.getItemAtPosition(position);
-                String selectedItem = syllabus.getChapter();
-                Toast.makeText(getActivity(),"Selected Subject :"+selectedItem,Toast.LENGTH_SHORT).show();
-*/
-
-
-                //commented
-               /* SyllabusDetailsFragment syllabusFragment = new SyllabusDetailsFragment();
-                ((BaseActivity)getActivity()).replaceFragment(syllabusFragment, true);*/
             }
 
         });
