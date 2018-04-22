@@ -59,6 +59,15 @@
             android:title="@string/item_exams" />
     </group>
     <group
+        android:id="@+id/nav_Progress"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_progressReport"
+            fontPath="fonts/Roboto-Regular.ttf"
+            android:icon="@drawable/exams"
+            android:title="@string/item_reports" />
+    </group>
+    <group
         android:id="@+id/nav_even"
         android:checkableBehavior="single">
         <item

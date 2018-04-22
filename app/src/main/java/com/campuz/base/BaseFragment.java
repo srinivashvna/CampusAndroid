@@ -5,9 +5,14 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.res.ResourcesCompat;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.campuz.R;
 
 /**
  * Created by hithap on 03-03-2017.
@@ -51,6 +56,19 @@ public class BaseFragment extends Fragment {
 
 
     public void onBackclick() {
+
+    }
+
+    private SpannableString getSpannableETAString(String totalString, String orderNotes) {
+        SpannableString spannableTimeString = new SpannableString(totalString);
+        if(totalString.contains(orderNotes)) {
+            int iStart = totalString.indexOf(orderNotes);
+            int iEnd = iStart + orderNotes.length();/*10 characters = in-network. */
+            spannableTimeString.setSpan(new ForegroundColorSpan(ResourcesCompat.getColor(getResources(), R.color.black, null)), iStart, iEnd, 0);
+            return spannableTimeString;
+        }else {
+            return spannableTimeString;
+        }
 
     }
 
