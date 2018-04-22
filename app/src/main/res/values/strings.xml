@@ -94,5 +94,7 @@
     <string name="time_item">10:00 AM</string>
     <string name="hour">1 Hr</string>
 
+    <string name="unit_test">Unit Text</string>
+
 
 </resources>
