@@ -1,0 +1,228 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.campuz.parentfragments.ProgressReportDetailedFragment"
+    tools:ignore="MissingPrefix">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                fontPath="fonts/Roboto-Bold.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="center_horizontal"
+                android:text="@string/campuzschool"
+                android:textColor="@color/dullgrey"
+                android:textSize="@dimen/_20ssp" />
+
+            <TextView
+                android:id="@+id/apply"
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:text="@string/unit_test"
+                android:textColor="@color/appblue"
+                android:textSize="@dimen/_37ssp" />
+
+            <TextView
+                android:id="@+id/grade"
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/apply"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:text="@string/grade"
+                android:textColor="@color/appblue"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:id="@+id/rank"
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/apply"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="@string/rank"
+                android:textColor="@color/appblue"
+                android:textSize="@dimen/_14ssp" />
+
+
+
+                <ListView
+                    android:id="@+id/progressSubjectsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_below="@+id/rank"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="@dimen/_5sdp" />
+
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_below="@+id/progressSubjectsList"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@color/track" />
+
+            <TextView
+                android:id="@+id/totalMarks"
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/view"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:text="@string/totalMarks"
+                android:textColor="@color/appblue"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:id="@+id/Total"
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/view"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="@string/total"
+                android:textColor="@color/appblue"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:id="@+id/teacherSuggest"
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/Total"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="@string/teacher_suggest"
+                android:textColor="@color/appblue"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:id="@+id/teacherComments"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_below="@+id/teacherSuggest"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center_vertical|top"
+                android:text="@string/comments"
+                />
+
+            <TextView
+                android:id="@+id/parentComments"
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/teacherComments"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="@string/parentComments"
+                android:textColor="@color/appblue"
+                android:textSize="@dimen/_14ssp" />
+
+            <EditText
+                android:id="@+id/et_perentComments"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_below="@+id/parentComments"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/rounded_border_edittext"
+                android:gravity="center_vertical|top"
+                android:padding="@dimen/_5sdp"
+
+                />
+
+            <TextView
+                android:id="@+id/tvSignature"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_perentComments"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/signature"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20ssp" />
+
+
+            <FrameLayout
+                android:id="@+id/ll_signature"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_below="@+id/tvSignature"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:background="@drawable/rounded_border_edittext"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_signature1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_5sdp" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/bottom_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_signature"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:weightSum="3">
+
+                <Button
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/btn_Submit"
+                    android:background="@color/appblue"
+                    fontPath="fonts/Roboto-Bold.ttf"
+                    android:textColor="@color/white"
+                    android:text="@string/submit" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

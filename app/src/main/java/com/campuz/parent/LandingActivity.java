@@ -32,6 +32,8 @@ import com.campuz.parentfragments.ExamDetailedFragment;
 import com.campuz.parentfragments.ExamsFragment;
 import com.campuz.parentfragments.HomeFragment;
 import com.campuz.parentfragments.LeaveFragment;
+import com.campuz.parentfragments.ProgressReportDetailedFragment;
+import com.campuz.parentfragments.ProgressReportFragment;
 import com.campuz.parentfragments.SubjectsSyllabusFragment;
 import com.campuz.parentfragments.SyllabusDetailsFragment;
 import com.campuz.parentfragments.TimeTableFragment;
@@ -44,7 +46,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class LandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, LeaveFragment.OnFragmentInteractionListener,HomeFragment.OnFragmentInteractionListener,DairyReportFragment.OnFragmentInteractionListener,
         AttendanceReportFragment.OnFragmentInteractionListener, SubjectsSyllabusFragment.OnFragmentInteractionListener, SyllabusDetailsFragment.OnFragmentInteractionListener, ExamsFragment.OnFragmentInteractionListener
-        ,ExamDetailedFragment.OnFragmentInteractionListener,TimeTableFragment.OnFragmentInteractionListener{
+        ,ExamDetailedFragment.OnFragmentInteractionListener,TimeTableFragment.OnFragmentInteractionListener,ProgressReportFragment.OnFragmentInteractionListener,ProgressReportDetailedFragment.OnFragmentInteractionListener{
 
     private View header;
 
@@ -158,6 +160,9 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
         }else if (id == R.id.nav_timetable&& !(currentFragment instanceof TimeTableFragment)) {
             TimeTableFragment timeTableFragment = new TimeTableFragment();
             replaceFragment(timeTableFragment, true);
+        }else if (id == R.id.nav_progressReport&& !(currentFragment instanceof ProgressReportFragment)) {
+            ProgressReportFragment progressReportFragment = new ProgressReportFragment();
+            replaceFragment(progressReportFragment, true);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

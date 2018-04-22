@@ -81,6 +81,7 @@
             android:id="@+id/btn_Submit"
             android:background="@color/appblue"
             fontPath="fonts/Roboto-Bold.ttf"
+            android:textColor="@color/white"
             android:text="@string/submit" />
 
 

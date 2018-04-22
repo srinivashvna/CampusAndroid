@@ -52,9 +52,11 @@
     <string name="rqsthistory">Request History</string>
     <string name="attendance_report">Attendance Report</string>
     <string name="subjects_syllabus">Subjects</string>
+    <string name="unit_test">Unit Test</string>
     <string name="syllabus">Syllabus</string>
     <string name="exam_details">Exam Details</string>
     <string name="exams">Exams</string>
+    <string name="progress">Progress Report</string>
     <string name="checkbox_notstarted">Not yet Started</string>
     <string name="completed">Completed</string>
     <string name="checkbox_completed">Completed</string>
@@ -62,8 +64,17 @@
     <string name="timetable">TimeTable</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
+    <string name="rank">Rank : N/A</string>
+    <string name="grade">Grade: A</string>
+    <string name="total">Total</string>
+    <string name="totalMarks">400</string>
+    <string name="marks">25</string>
+    <string name="teacher_suggest">Teacher Suggestions</string>
+    <string name="parentComments">Parent Comments</string>
+    <string name="signature">Signature</string>
+    <string name="comments">Concentrate on Maths</string>
+    <string name="et_entername">Enter Name</string>
+    <string name="dash">-</string>
     <!-- SUBJECTS -->
     <string name="telugu">Telugu</string>
     <string name="hindi">Hindi</string>
@@ -77,7 +88,6 @@
     <string name="time">10:00 AM</string>
     <string name="time_item">10:00 AM</string>
     <string name="hour">1 Hr</string>
-
 
 
 </resources>

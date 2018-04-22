@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <TextView
+        android:id="@+id/title"
+        fontPath="fonts/Roboto-Bold.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_5sdp"
+        android:text="@string/campuzschool"
+        android:textColor="@color/dullgrey"
+        android:textSize="@dimen/_20ssp" />
+
+    <TextView
+        android:id="@+id/apply"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_5sdp"
+        android:text="@string/progress"
+        android:textColor="@color/appblue"
+        android:textSize="@dimen/_37ssp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/check_uncheck"
+            android:text="@string/checkbox_notstarted"
+            android:textSize="@dimen/_14sdp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:button="@drawable/check_checked"
+            android:text="@string/checkbox_completed"
+            android:textSize="@dimen/_14sdp" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview_exams"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/_5sdp" />
+
+</LinearLayout>
