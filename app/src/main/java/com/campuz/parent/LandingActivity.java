@@ -148,10 +148,10 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
         }else if (id == R.id.nav_attendance&& !(currentFragment instanceof AttendanceReportFragment)) {
             AttendanceReportFragment attendanceReportFragment = new AttendanceReportFragment();
             replaceFragment(attendanceReportFragment, true);
-        }else if (id == R.id.nav_leaves&& !(currentFragment instanceof LeaveFragment)) {
+        }/*else if (id == R.id.nav_leaves&& !(currentFragment instanceof LeaveFragment)) {
             LeaveFragment leaveFragment = new LeaveFragment();
             replaceFragment(leaveFragment, true);
-        }else if (id == R.id.nav_dairy&& !(currentFragment instanceof DairyReportFragment)) {
+        }*/else if (id == R.id.nav_dairy&& !(currentFragment instanceof DairyReportFragment)) {
             DairyReportFragment dairyReportFragment = new DairyReportFragment();
             replaceFragment(dairyReportFragment, true);
         }else if (id == R.id.nav_exams&& !(currentFragment instanceof ExamsFragment)) {
@@ -160,10 +160,10 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
         }else if (id == R.id.nav_timetable&& !(currentFragment instanceof TimeTableFragment)) {
             TimeTableFragment timeTableFragment = new TimeTableFragment();
             replaceFragment(timeTableFragment, true);
-        }else if (id == R.id.nav_progressReport&& !(currentFragment instanceof ProgressReportFragment)) {
+        }/*else if (id == R.id.nav_progressReport&& !(currentFragment instanceof ProgressReportFragment)) {
             ProgressReportFragment progressReportFragment = new ProgressReportFragment();
             replaceFragment(progressReportFragment, true);
-        }
+        }*/
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
