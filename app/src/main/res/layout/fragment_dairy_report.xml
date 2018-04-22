@@ -71,6 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
        android:gravity="center"
+        android:visibility="gone"
         android:orientation="horizontal"
         android:layout_margin="@dimen/_5sdp"
         android:weightSum="3">
