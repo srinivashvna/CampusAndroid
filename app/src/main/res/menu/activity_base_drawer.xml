@@ -58,7 +58,7 @@
             android:icon="@drawable/exams"
             android:title="@string/item_exams" />
     </group>
-    <group
+    <!--<group
         android:id="@+id/nav_Progress"
         android:checkableBehavior="single">
         <item
@@ -66,7 +66,7 @@
             fontPath="fonts/Roboto-Regular.ttf"
             android:icon="@drawable/exams"
             android:title="@string/item_reports" />
-    </group>
+    </group>-->
     <group
         android:id="@+id/nav_even"
         android:checkableBehavior="single">
@@ -85,7 +85,7 @@
             android:icon="@drawable/holidays"
             android:title="@string/item_holidays" />
     </group>
-    <group
+    <!--<group
         android:id="@+id/nav_leav"
         android:checkableBehavior="single">
         <item
@@ -93,7 +93,7 @@
             fontPath="fonts/Roboto-Regular.ttf"
             android:icon="@drawable/leaves"
             android:title="@string/item_leaves" />
-    </group>
+    </group>-->
     <group
         android:id="@+id/nav_not"
         android:checkableBehavior="single">
@@ -111,6 +111,15 @@
             fontPath="fonts/Roboto-Regular.ttf"
             android:icon="@drawable/contact"
             android:title="@string/item_contact" />
+    </group>
+    <group
+        android:id="@+id/nav_gall"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_gallery"
+            fontPath="fonts/Roboto-Regular.ttf"
+            android:icon="@drawable/syllubus"
+            android:title="@string/item_gallery" />
     </group>
 
     <!--<item android:title="Communicate">
