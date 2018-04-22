@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix">
+
+    <group
+        android:id="@+id/nav_att"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_attendance"
+            fontPath="fonts/Roboto-Regular.ttf"
+            android:icon="@drawable/attendance"
+            android:title="@string/item_attendance" />
+    </group>
+    <group
+        android:id="@+id/nav_dia"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dairy"
+            fontPath="fonts/Roboto-Regular.ttf"
+            android:icon="@drawable/dairyreports"
+            android:title="@string/item_reports_dairy" />
+    </group>
+
+    <group
+        android:id="@+id/nav_chatgroup"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_chat"
+            fontPath="fonts/Roboto-Regular.ttf"
+            android:icon="@drawable/chat"
+            android:title="@string/item_chat" />
+    </group>
+
+    <group
+        android:id="@+id/nav_time"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_timetable"
+            fontPath="fonts/Roboto-Regular.ttf"
+            android:icon="@drawable/timetable"
+            android:title="@string/item_timetable" />
+    </group>
+
+    <group
+        android:id="@+id/nav_leav"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_leaves"
+            fontPath="fonts/Roboto-Regular.ttf"
+            android:icon="@drawable/leaves"
+            android:title="@string/item_leave_approval" />
+    </group>
+
+    <!-- <group
+         android:id="@+id/nav_con"
+         android:checkableBehavior="single">
+         <item
+             android:id="@+id/nav_contact"
+             fontPath="fonts/Roboto-Regular.ttf"
+             android:icon="@drawable/contact"
+             android:title="@string/item_contact" />
+     </group>-->
+
+    <!--<item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>-->
+
+</menu>

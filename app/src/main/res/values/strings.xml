@@ -9,6 +9,8 @@
     <string name="home">Home</string>
     <string name="title_activity_login">Sign in</string>
 
+    <string name="teacher_module">Teacher Module</string>
+    <string name="parent_module">Parent Module</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -30,6 +32,7 @@
     <string name="item_events">Events</string>
     <string name="item_holidays">Holidays</string>
     <string name="item_leaves">Leaves</string>
+    <string name="item_leave_approval">Leave Approval</string>
     <string name="item_chat">Chat</string>
     <string name="item_camera">Camera</string>
     <string name="item_contact">Contact</string>
@@ -42,6 +45,7 @@
     <string name="hellods">DS</string>
     <string name="ds">Srinivas</string>
     <string name="anil">Anil Kumar</string>
+    <string name="alekhya">Alekhya</string>
     <string name="rollno">09NG1A1914</string>
     <string name="applyleave">Apply Leave</string>
     <string name="dairy_report">Diary Report</string>
@@ -52,7 +56,8 @@
     <string name="rqsthistory">Request History</string>
     <string name="attendance_report">Attendance Report</string>
     <string name="subjects_syllabus">Subjects</string>
-    <string name="unit_test">Unit Test</string>
+    <string name="events">Events</string>
+    <string name="notifications">Notifications</string>
     <string name="syllabus">Syllabus</string>
     <string name="exam_details">Exam Details</string>
     <string name="exams">Exams</string>

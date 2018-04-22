@@ -28,6 +28,7 @@ import com.campuz.R;
 import com.campuz.base.BaseActivity;
 import com.campuz.parentfragments.AttendanceReportFragment;
 import com.campuz.parentfragments.DairyReportFragment;
+import com.campuz.parentfragments.EventsFragment;
 import com.campuz.parentfragments.ExamDetailedFragment;
 import com.campuz.parentfragments.ExamsFragment;
 import com.campuz.parentfragments.HomeFragment;
@@ -38,7 +39,9 @@ import com.campuz.parentfragments.SubjectsSyllabusFragment;
 import com.campuz.parentfragments.SyllabusDetailsFragment;
 import com.campuz.parentfragments.TimeTableFragment;
 
+
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import com.campuz.parentfragments.NotificationsFragment;
 
 /**
  * Created by manikantad on 06-04-2018.
@@ -46,7 +49,8 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class LandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, LeaveFragment.OnFragmentInteractionListener,HomeFragment.OnFragmentInteractionListener,DairyReportFragment.OnFragmentInteractionListener,
         AttendanceReportFragment.OnFragmentInteractionListener, SubjectsSyllabusFragment.OnFragmentInteractionListener, SyllabusDetailsFragment.OnFragmentInteractionListener, ExamsFragment.OnFragmentInteractionListener
-        ,ExamDetailedFragment.OnFragmentInteractionListener,TimeTableFragment.OnFragmentInteractionListener,ProgressReportFragment.OnFragmentInteractionListener,ProgressReportDetailedFragment.OnFragmentInteractionListener{
+        ,ExamDetailedFragment.OnFragmentInteractionListener,TimeTableFragment.OnFragmentInteractionListener,ProgressReportFragment.OnFragmentInteractionListener,ProgressReportDetailedFragment.OnFragmentInteractionListener
+        ,EventsFragment.OnFragmentInteractionListener,NotificationsFragment.OnFragmentInteractionListener{
 
     private View header;
 
@@ -163,7 +167,13 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
         }/*else if (id == R.id.nav_progressReport&& !(currentFragment instanceof ProgressReportFragment)) {
             ProgressReportFragment progressReportFragment = new ProgressReportFragment();
             replaceFragment(progressReportFragment, true);
-        }*/
+        }*/else if (id == R.id.nav_events&& !(currentFragment instanceof EventsFragment)) {
+            EventsFragment eventsFragment = new EventsFragment();
+            replaceFragment(eventsFragment, true);
+        }else if (id == R.id.nav_notifications&& !(currentFragment instanceof NotificationsFragment)) {
+            NotificationsFragment notificationsFragment = new NotificationsFragment();
+            replaceFragment(notificationsFragment, true);
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

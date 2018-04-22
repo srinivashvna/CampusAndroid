@@ -37,6 +37,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
+
+        <activity android:name=".base.SelectModule"
+            android:label="Campuz"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".teacher.TeacherActivity"
+            android:label="Campuz"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

@@ -25,7 +25,7 @@
         android:id="@+id/txtName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ds"
+        android:text="@string/anil"
         android:gravity="center"
         fontPath="fonts/Roboto-Bold.ttf"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />

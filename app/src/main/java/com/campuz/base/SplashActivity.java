@@ -19,7 +19,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class SplashActivity extends BaseActivity {
 
     // Splash screen timer
-    private int SPLASH_TIME_OUT = 3000;
+    private int SPLASH_TIME_OUT = 2000;
 
 
     @Override
@@ -39,7 +39,7 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void run() {
 
-                    Intent i = new Intent(SplashActivity.this, LoginActivity.class);
+                    Intent i = new Intent(SplashActivity.this, SelectModule.class);
                     startActivity(i);
                     finish();
 
