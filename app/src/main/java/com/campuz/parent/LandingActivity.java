@@ -31,6 +31,7 @@ import com.campuz.parentfragments.DairyReportFragment;
 import com.campuz.parentfragments.EventsFragment;
 import com.campuz.parentfragments.ExamDetailedFragment;
 import com.campuz.parentfragments.ExamsFragment;
+import com.campuz.parentfragments.HolidayFragment;
 import com.campuz.parentfragments.HomeFragment;
 import com.campuz.parentfragments.LeaveFragment;
 import com.campuz.parentfragments.ProgressReportDetailedFragment;
@@ -50,7 +51,7 @@ import com.campuz.parentfragments.NotificationsFragment;
 public class LandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, LeaveFragment.OnFragmentInteractionListener,HomeFragment.OnFragmentInteractionListener,DairyReportFragment.OnFragmentInteractionListener,
         AttendanceReportFragment.OnFragmentInteractionListener, SubjectsSyllabusFragment.OnFragmentInteractionListener, SyllabusDetailsFragment.OnFragmentInteractionListener, ExamsFragment.OnFragmentInteractionListener
         ,ExamDetailedFragment.OnFragmentInteractionListener,TimeTableFragment.OnFragmentInteractionListener,ProgressReportFragment.OnFragmentInteractionListener,ProgressReportDetailedFragment.OnFragmentInteractionListener
-        ,EventsFragment.OnFragmentInteractionListener,NotificationsFragment.OnFragmentInteractionListener{
+        ,EventsFragment.OnFragmentInteractionListener,NotificationsFragment.OnFragmentInteractionListener,HolidayFragment.OnFragmentInteractionListener{
 
     private View header;
 
@@ -173,6 +174,9 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
         }else if (id == R.id.nav_notifications&& !(currentFragment instanceof NotificationsFragment)) {
             NotificationsFragment notificationsFragment = new NotificationsFragment();
             replaceFragment(notificationsFragment, true);
+        }else if (id == R.id.nav_holidays&& !(currentFragment instanceof HolidayFragment)) {
+            HolidayFragment holidayFragment = new HolidayFragment();
+            replaceFragment(holidayFragment, true);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

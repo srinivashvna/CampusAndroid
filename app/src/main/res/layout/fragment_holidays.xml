@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingPrefix">
+
+    <TextView
+        android:id="@+id/title"
+        fontPath="fonts/Roboto-Bold.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_5sdp"
+        android:text="@string/campuzschool"
+        android:textColor="@color/dullgrey"
+        android:textSize="@dimen/_20ssp" />
+
+    <TextView
+        android:id="@+id/apply"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_5sdp"
+        android:text="@string/item_holidays"
+        android:textColor="@color/appblue"
+        android:textSize="@dimen/_37ssp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_below="@+id/apply"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:background="@color/dullgrey"
+        android:gravity="center_vertical">
+
+
+        <!--replace search icon with our's-->
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@color/appblue"
+            android:padding="@dimen/_5sdp"
+            android:src="@android:drawable/ic_menu_search" />
+
+        <EditText
+            android:id="@+id/editTextDate"
+            fontPath="fonts/Roboto-Regular.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:layout_toEndOf="@+id/iv_search"
+            android:background="@null"
+            android:hint="@string/search_here"
+            android:inputType="textPersonName"
+            android:text="" />
+
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listview_holidays"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_search"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/_10sdp" />
+
+
+</RelativeLayout>

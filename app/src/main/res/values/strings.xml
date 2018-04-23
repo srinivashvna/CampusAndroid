@@ -96,5 +96,10 @@
 
     <string name="unit_test">Unit Text</string>
 
+    <string name="history">History</string>
+    <string name="take_attendance">Take Attendance</string>
+    <string name="edit_attendance">Edit Attendance</string>
+    <string name="search_here">Search here..</string>
+
 
 </resources>

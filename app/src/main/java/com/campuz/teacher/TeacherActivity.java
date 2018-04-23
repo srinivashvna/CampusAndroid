@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -21,7 +22,7 @@ import android.widget.TextView;
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.campuz.R;
 import com.campuz.base.BaseActivity;
-import com.campuz.parentfragments.HomeFragment;
+import com.campuz.parentfragments.SubjectsSyllabusFragment;
 import com.campuz.teacherfragments.AttendanceFragment;
 import com.campuz.teacherfragments.HomeFragmentTeacher;
 
@@ -112,6 +113,17 @@ public class TeacherActivity extends BaseActivity implements NavigationView.OnNa
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+
+        int id = item.getItemId();
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.container_layout);
+        removeAllFragments();
+        if (id == R.id.nav_attendance) {
+            AttendanceFragment attendanceFragment = new AttendanceFragment();
+            replaceFragment(attendanceFragment, true);
+        }else if (id == R.id.nav_syllubus&& !(currentFragment instanceof SubjectsSyllabusFragment)) {
+
+        }
         return false;
     }
 
