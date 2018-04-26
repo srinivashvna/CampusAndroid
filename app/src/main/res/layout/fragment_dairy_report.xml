@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="MissingPrefix"
-    tools:context="com.campuz.parentfragments.DairyReportFragment">
+    tools:context="com.campuz.parentfragments.ParentDairyReportFragment">
 
     <TextView
         android:id="@+id/title"

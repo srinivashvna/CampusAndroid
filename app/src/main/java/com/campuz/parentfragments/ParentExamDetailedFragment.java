@@ -8,19 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.campuz.R;
 import com.campuz.adapter.ExamDetailsAdapter;
-import com.campuz.adapter.SyllabusAdapter;
 import com.campuz.base.BaseActivity;
 import com.campuz.base.BaseFragment;
 import com.campuz.model.ExamDetailsModel;
-import com.campuz.model.SyllabusModel;
 
 import java.util.ArrayList;
 
-public class ExamDetailedFragment extends BaseFragment {
+public class ParentExamDetailedFragment extends BaseFragment {
 
     private static final String ARG_PARAM1 = "param1";
 
@@ -29,13 +26,13 @@ public class ExamDetailedFragment extends BaseFragment {
     String[] subject_names = {"Telugu", "Hindi", "English", "Maths", "Science", "Social", "GK", "Computers"};
     String[] chapter_titles = {"This is Chapter One", "This is Chapter Two", "This is Chapter Three", "This is Chapter Four", "This is Chapter Five", "This is Chapter Six", "This is Chapter Six", "This is Chapter Six"};
 
-    private ExamDetailedFragment.OnFragmentInteractionListener mListener;
+    private ParentExamDetailedFragment.OnFragmentInteractionListener mListener;
 
-    public ExamDetailedFragment() {
+    public ParentExamDetailedFragment() {
         // Required empty public constructor
     }
-    public static ExamDetailedFragment newInstance(String param1, String param2) {
-        ExamDetailedFragment fragment = new ExamDetailedFragment();
+    public static ParentExamDetailedFragment newInstance(String param1, String param2) {
+        ParentExamDetailedFragment fragment = new ParentExamDetailedFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -72,8 +69,8 @@ public class ExamDetailedFragment extends BaseFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof SyllabusDetailsFragment.OnFragmentInteractionListener) {
-            mListener = (ExamDetailedFragment.OnFragmentInteractionListener) context;
+        if (context instanceof ParentSyllabusDetailsFragment.OnFragmentInteractionListener) {
+            mListener = (ParentExamDetailedFragment.OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");

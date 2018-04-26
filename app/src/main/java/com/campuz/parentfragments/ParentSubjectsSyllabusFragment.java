@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.campuz.R;
 import com.campuz.adapter.SubjectsAdapter;
@@ -18,7 +17,7 @@ import com.campuz.model.SubjectsModel;
 
 import java.util.ArrayList;
 
-public class SubjectsSyllabusFragment extends BaseFragment {
+public class ParentSubjectsSyllabusFragment extends BaseFragment {
     private static final String ARG_PARAM1 = "param1";
 
     ArrayList<SubjectsModel> sub_list = new ArrayList<>();
@@ -35,13 +34,13 @@ public class SubjectsSyllabusFragment extends BaseFragment {
             R.drawable.ic_computers
     };
 
-    private SubjectsSyllabusFragment.OnFragmentInteractionListener mListener;
+    private ParentSubjectsSyllabusFragment.OnFragmentInteractionListener mListener;
 
-    public SubjectsSyllabusFragment() {
+    public ParentSubjectsSyllabusFragment() {
         // Required empty public constructor
     }
-    public static SubjectsSyllabusFragment newInstance(String param1, String param2) {
-        SubjectsSyllabusFragment fragment = new SubjectsSyllabusFragment();
+    public static ParentSubjectsSyllabusFragment newInstance(String param1, String param2) {
+        ParentSubjectsSyllabusFragment fragment = new ParentSubjectsSyllabusFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -67,7 +66,7 @@ public class SubjectsSyllabusFragment extends BaseFragment {
         listview_subjects.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                SyllabusDetailsFragment syllabusFragment = new SyllabusDetailsFragment();
+                ParentSyllabusDetailsFragment syllabusFragment = new ParentSyllabusDetailsFragment();
                 ((BaseActivity)getActivity()).replaceFragment(syllabusFragment, true);
             }
         });
@@ -77,8 +76,8 @@ public class SubjectsSyllabusFragment extends BaseFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof SubjectsSyllabusFragment.OnFragmentInteractionListener) {
-            mListener = (SubjectsSyllabusFragment.OnFragmentInteractionListener) context;
+        if (context instanceof ParentSubjectsSyllabusFragment.OnFragmentInteractionListener) {
+            mListener = (ParentSubjectsSyllabusFragment.OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");

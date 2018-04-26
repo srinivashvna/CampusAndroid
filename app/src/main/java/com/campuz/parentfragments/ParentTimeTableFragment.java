@@ -1,42 +1,54 @@
 package com.campuz.parentfragments;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
-import com.amulyakhare.textdrawable.TextDrawable;
 import com.campuz.R;
-import com.campuz.base.BaseActivity;
+import com.campuz.adapter.TimeTableAdapter;
+import com.campuz.model.TimeTableModel;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link HomeFragment.OnFragmentInteractionListener} interface
+ * {@link ParentTimeTableFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link HomeFragment#newInstance} factory method to
+ * Use the {@link ParentTimeTableFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class ParentTimeTableFragment extends Fragment {
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    ArrayList<TimeTableModel> timeTable_list = new ArrayList<>();
+    private ListView listview_timetable;
+    String[] time_names = {"10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM"};
+    String[] subject_names = {"Telugu", "Hindi", "English", "Maths", "Science"};
+    Integer[] icon_img = {
+            R.drawable.timetableitem,
+            R.drawable.timetableitem,
+            R.drawable.lunch,
+            R.drawable.timetableitem,
+            R.drawable.timetableitem
+    };
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private View view;
 
     private OnFragmentInteractionListener mListener;
 
-    public HomeFragment() {
+    public ParentTimeTableFragment() {
         // Required empty public constructor
     }
 
@@ -46,11 +58,11 @@ public class HomeFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment HomeFragment.
+     * @return A new instance of fragment ParentTimeTableFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
+    public static ParentTimeTableFragment newInstance(String param1, String param2) {
+        ParentTimeTableFragment fragment = new ParentTimeTableFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -66,29 +78,29 @@ public class HomeFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-    }
-
-    public void init(View view){
-        TextView txtName = (TextView) view.findViewById(R.id.textName);
-        txtName.setText(R.string.ds);
-        ImageView imgProfile = (ImageView) view.findViewById(R.id.imgProfile);
-        TextDrawable drawable = TextDrawable.builder().beginConfig()
-                .withBorder(10)
-                .bold()
-                .useFont(Typeface.DEFAULT)
-                .endConfig()
-                .buildRound("DS", getResources().getColor(R.color.appblue));
-
-
-        imgProfile.setImageDrawable(drawable);
+        for (int i = 0; i < subject_names.length; i++) {
+            TimeTableModel items = new TimeTableModel();
+            items.setIcon(icon_img[i]);
+            items.setSubject_name(subject_names[i]);
+            items.setTime(time_names[i]);
+            timeTable_list.add(items);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_home, container, false);
-        init(view);
-        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_time_table,container,false);
+
+        listview_timetable = (ListView) view.findViewById(R.id.listview_timetable);
+        listview_timetable.setAdapter(new TimeTableAdapter(getActivity(), R.layout.fragment_timetable_item, timeTable_list));
+
+        listview_timetable.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
         return view;
     }
 
@@ -129,9 +141,5 @@ public class HomeFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
-    }
-
-    public void onBackPressed() {
-        ((BaseActivity) getActivity()).removeFragment();
     }
 }

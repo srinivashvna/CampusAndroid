@@ -8,7 +8,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.campuz.R;
-import com.campuz.parent.LoginActivity;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -39,7 +38,7 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void run() {
 
-                    Intent i = new Intent(SplashActivity.this, SelectModule.class);
+                    Intent i = new Intent(SplashActivity.this, LoginActivity.class);
                     startActivity(i);
                     finish();
 

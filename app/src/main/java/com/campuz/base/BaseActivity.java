@@ -2,33 +2,16 @@ package com.campuz.base;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
-import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.campuz.R;
-import com.campuz.parentfragments.AttendanceReportFragment;
-import com.campuz.parentfragments.DairyReportFragment;
-import com.campuz.parentfragments.HomeFragment;
-import com.campuz.parentfragments.LeaveFragment;
-import com.campuz.parentfragments.SubjectsSyllabusFragment;
-import com.campuz.parentfragments.SyllabusDetailsFragment;
+import com.campuz.parentfragments.ParentHomeFragment;
 import com.campuz.util.Constants;
 
 import java.text.SimpleDateFormat;
@@ -135,7 +118,7 @@ public class BaseActivity extends AppCompatActivity {
             FragmentManager fm = getSupportFragmentManager();
             for (int i = 0; i < fm.getBackStackEntryCount(); i++) {
                 Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.container_layout);
-                if(!(currentFragment instanceof HomeFragment)){
+                if(!(currentFragment instanceof ParentHomeFragment)){
                     fm.popBackStack();
                 }
             }

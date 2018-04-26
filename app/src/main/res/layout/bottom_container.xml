@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/submit"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_border_button"
+        android:textSize="14sp" />
+
+
+    <Button
+        android:id="@+id/select_button"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/select_all"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_border_button"
+        android:textSize="14sp" />
+</LinearLayout>

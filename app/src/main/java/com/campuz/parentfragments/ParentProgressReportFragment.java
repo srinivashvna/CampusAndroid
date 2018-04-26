@@ -1,6 +1,5 @@
 package com.campuz.parentfragments;
 
-import android.app.DatePickerDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,21 +7,31 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.DatePicker;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.campuz.R;
+import com.campuz.adapter.ExamsAdapter;
 import com.campuz.base.BaseActivity;
-import com.campuz.base.BaseFragment;
+import com.campuz.model.ExamsModel;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link LeaveFragment.OnFragmentInteractionListener} interface
+ * {@link ParentProgressReportFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link LeaveFragment#newInstance} factory method to
+ * Use the {@link ParentProgressReportFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LeaveFragment extends BaseFragment implements DatePickerDialog.OnDateSetListener {
+public class ParentProgressReportFragment extends Fragment {
+
+    ArrayList<ExamsModel> tests_list = new ArrayList<>();
+    ListView lv_test;
+    String[] test = {"Unit Test - 1", "Unit Test - 2", "Quarterly", "Half Yearly", "Annual"};
+    String[] test_status = {"Results", "Syllabus", "Syllabus", "Syllabus", "Syllabus"};
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -34,7 +43,7 @@ public class LeaveFragment extends BaseFragment implements DatePickerDialog.OnDa
 
     private OnFragmentInteractionListener mListener;
 
-    public LeaveFragment() {
+    public ParentProgressReportFragment() {
         // Required empty public constructor
     }
 
@@ -44,11 +53,11 @@ public class LeaveFragment extends BaseFragment implements DatePickerDialog.OnDa
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment LeaveFragment.
+     * @return A new instance of fragment ParentProgressReportFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static LeaveFragment newInstance(String param1, String param2) {
-        LeaveFragment fragment = new LeaveFragment();
+    public static ParentProgressReportFragment newInstance(String param1, String param2) {
+        ParentProgressReportFragment fragment = new ParentProgressReportFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +68,12 @@ public class LeaveFragment extends BaseFragment implements DatePickerDialog.OnDa
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        for (int i = 0; i < test.length; i++) {
+            ExamsModel items = new ExamsModel(test[i], test_status[i]);
+            tests_list.add(items);
+        }
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -68,8 +83,19 @@ public class LeaveFragment extends BaseFragment implements DatePickerDialog.OnDa
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_leave, container, false);
+        View view = inflater.inflate(R.layout.fragment_progress_report, container, false);
+
+        lv_test = (ListView) view.findViewById(R.id.listview_exams);
+        lv_test.setAdapter(new ExamsAdapter(getActivity(), R.layout.fragment_exam_list_item, tests_list));
+
+        lv_test.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ParentProgressReportDetailedFragment parentProgressReportDetailedFragment = new ParentProgressReportDetailedFragment();
+                ((BaseActivity)getActivity()).replaceFragment(parentProgressReportDetailedFragment, true);
+            }
+        });
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -96,11 +122,6 @@ public class LeaveFragment extends BaseFragment implements DatePickerDialog.OnDa
         mListener = null;
     }
 
-    @Override
-    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-
-    }
-
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -114,9 +135,5 @@ public class LeaveFragment extends BaseFragment implements DatePickerDialog.OnDa
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
-    }
-
-    public void onBackPressed() {
-        ((BaseActivity) getActivity()).removeFragment();
     }
 }

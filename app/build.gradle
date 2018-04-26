@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion target_sdk_version
+    buildToolsVersion buildtool_version
     defaultConfig {
         applicationId "com.campuz"
         minSdkVersion 18
@@ -14,7 +14,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
@@ -24,28 +24,23 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:support-v4:25.4.0'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:support-v4:27.1.1'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation 'com.android.support:appcompat-v7:25.3.1'
-    implementation 'com.android.support:design:25.3.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:design:27.1.1'
     testCompile 'junit:junit:4.12'
-
     // Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     // JSON Parsing
-    implementation 'com.google.code.gson:gson:2.7'
-    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     //http3aaa
-    implementation 'com.squareup.okhttp3:okhttp:3.6.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.0'
     //fonts
     implementation 'uk.co.chrisjenx:calligraphy:2.2.0'
-    implementation 'com.android.support:recyclerview-v7:25.3.1'
-    implementation 'com.google.android.gms:play-services-maps:10.2.1'
-    implementation 'com.google.android.gms:play-services-location:10.2.1'
     //circlewithtext
     implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
     //sdp

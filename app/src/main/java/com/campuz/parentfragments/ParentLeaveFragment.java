@@ -1,36 +1,28 @@
 package com.campuz.parentfragments;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 
-import com.applandeo.materialcalendarview.CalendarView;
-import com.applandeo.materialcalendarview.DatePicker;
-import com.applandeo.materialcalendarview.EventDay;
-import com.applandeo.materialcalendarview.builders.DatePickerBuilder;
-import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
-import com.applandeo.materialcalendarview.listeners.OnSelectDateListener;
 import com.campuz.R;
 import com.campuz.base.BaseActivity;
 import com.campuz.base.BaseFragment;
 
-import java.util.Calendar;
-import java.util.List;
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link AttendanceReportFragment.OnFragmentInteractionListener} interface
+ * {@link ParentLeaveFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link AttendanceReportFragment#newInstance} factory method to
+ * Use the {@link ParentLeaveFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AttendanceReportFragment extends BaseFragment implements OnDayClickListener {
+public class ParentLeaveFragment extends BaseFragment implements DatePickerDialog.OnDateSetListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -42,7 +34,7 @@ public class AttendanceReportFragment extends BaseFragment implements OnDayClick
 
     private OnFragmentInteractionListener mListener;
 
-    public AttendanceReportFragment() {
+    public ParentLeaveFragment() {
         // Required empty public constructor
     }
 
@@ -52,11 +44,11 @@ public class AttendanceReportFragment extends BaseFragment implements OnDayClick
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AttendanceReportFragment.
+     * @return A new instance of fragment ParentLeaveFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AttendanceReportFragment newInstance(String param1, String param2) {
-        AttendanceReportFragment fragment = new AttendanceReportFragment();
+    public static ParentLeaveFragment newInstance(String param1, String param2) {
+        ParentLeaveFragment fragment = new ParentLeaveFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -76,12 +68,8 @@ public class AttendanceReportFragment extends BaseFragment implements OnDayClick
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_attendance_report, container, false);
-        CalendarView calendarView = (CalendarView)view.findViewById(R.id.calendarView);
-
         // Inflate the layout for this fragment
-        return view;
+        return inflater.inflate(R.layout.fragment_leave, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -109,7 +97,7 @@ public class AttendanceReportFragment extends BaseFragment implements OnDayClick
     }
 
     @Override
-    public void onDayClick(EventDay eventDay) {
+    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
 
     }
 

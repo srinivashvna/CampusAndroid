@@ -11,16 +11,14 @@ package com.campuz.parentfragments;
  import android.widget.ListView;
 
  import com.campuz.R;
- import com.campuz.adapter.EventsAdapter;
  import com.campuz.adapter.NotificationAdapter;
- import com.campuz.adapter.SubjectsAdapter;
  import com.campuz.base.BaseActivity;
  import com.campuz.base.BaseFragment;
  import com.campuz.model.NotificationModel;
 
  import java.util.ArrayList;
 
-public class NotificationsFragment extends BaseFragment {
+public class ParentNotificationsFragment extends BaseFragment {
     private static final String ARG_PARAM1 = "param1";
 
     ArrayList<NotificationModel> notification_list = new ArrayList<>();
@@ -28,13 +26,13 @@ public class NotificationsFragment extends BaseFragment {
     String[] noti_names = {"Notifications - One","Notifications - One","Notifications - One","Notifications - One","Notifications - One"};
 
 
-    private NotificationsFragment.OnFragmentInteractionListener mListener;
+    private ParentNotificationsFragment.OnFragmentInteractionListener mListener;
 
-    public NotificationsFragment() {
+    public ParentNotificationsFragment() {
         // Required empty public constructor
     }
-    public static NotificationsFragment newInstance(String param1, String param2) {
-        NotificationsFragment fragment = new NotificationsFragment();
+    public static ParentNotificationsFragment newInstance(String param1, String param2) {
+        ParentNotificationsFragment fragment = new ParentNotificationsFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -60,7 +58,7 @@ public class NotificationsFragment extends BaseFragment {
         listview_notifications.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                /*SyllabusDetailsFragment syllabusFragment = new SyllabusDetailsFragment();
+                /*ParentSyllabusDetailsFragment syllabusFragment = new ParentSyllabusDetailsFragment();
                 ((BaseActivity)getActivity()).replaceFragment(syllabusFragment, true);*/
             }
         });
@@ -70,8 +68,8 @@ public class NotificationsFragment extends BaseFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof NotificationsFragment.OnFragmentInteractionListener) {
-            mListener = (NotificationsFragment.OnFragmentInteractionListener) context;
+        if (context instanceof ParentNotificationsFragment.OnFragmentInteractionListener) {
+            mListener = (ParentNotificationsFragment.OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");

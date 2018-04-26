@@ -5,37 +5,29 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
+import com.applandeo.materialcalendarview.CalendarView;
+import com.applandeo.materialcalendarview.EventDay;
+import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
 import com.campuz.R;
-import com.campuz.adapter.ProgressReportAdapter;
 import com.campuz.base.BaseActivity;
-import com.campuz.model.ProgressReportModel;
-
-import java.util.ArrayList;
+import com.campuz.base.BaseFragment;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ProgressReportDetailedFragment.OnFragmentInteractionListener} interface
+ * {@link ParentAttendanceReportFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link ProgressReportDetailedFragment#newInstance} factory method to
+ * Use the {@link ParentAttendanceReportFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProgressReportDetailedFragment extends Fragment {
+public class ParentAttendanceReportFragment extends BaseFragment implements OnDayClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    ArrayList<ProgressReportModel> tests_list = new ArrayList<>();
-    ListView lv_test;
-    String[] subject_names = {"Telugu", "Hindi", "English", "Maths", "Science"};
-    String[] subject_marks = {"25", "50", "55", "35", "40"};
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -43,7 +35,7 @@ public class ProgressReportDetailedFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public ProgressReportDetailedFragment() {
+    public ParentAttendanceReportFragment() {
         // Required empty public constructor
     }
 
@@ -53,11 +45,11 @@ public class ProgressReportDetailedFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ProgressReportDetailedFragment.
+     * @return A new instance of fragment ParentAttendanceReportFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ProgressReportDetailedFragment newInstance(String param1, String param2) {
-        ProgressReportDetailedFragment fragment = new ProgressReportDetailedFragment();
+    public static ParentAttendanceReportFragment newInstance(String param1, String param2) {
+        ParentAttendanceReportFragment fragment = new ParentAttendanceReportFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -72,50 +64,16 @@ public class ProgressReportDetailedFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-        for (int i = 0; i < subject_names.length; i++) {
-            ProgressReportModel items = new ProgressReportModel();
-            items.setSubjects(subject_names[i]);
-            items.setMarks(subject_marks[i]);
-            tests_list.add(items);
-        }
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_progress_report_detailed, container, false);
 
-        lv_test = (ListView) view.findViewById(R.id.progressSubjectsList);
-        lv_test.setAdapter(new ProgressReportAdapter(getActivity(), R.layout.progress_report_item, tests_list));
-        lv_test.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        View view = inflater.inflate(R.layout.fragment_attendance_report, container, false);
+        CalendarView calendarView = (CalendarView)view.findViewById(R.id.calendarView);
 
-            }
-        });
-
-        lv_test.setOnTouchListener(new ListView.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                int action = event.getAction();
-                switch (action) {
-                    case MotionEvent.ACTION_DOWN:
-                        // Disallow ScrollView to intercept touch events.
-                        v.getParent().requestDisallowInterceptTouchEvent(true);
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        // Allow ScrollView to intercept touch events.
-                        v.getParent().requestDisallowInterceptTouchEvent(false);
-                        break;
-                }
-                // Handle ListView touch events.
-                v.onTouchEvent(event);
-                return true;
-            }
-        });
-
+        // Inflate the layout for this fragment
         return view;
     }
 
@@ -143,6 +101,11 @@ public class ProgressReportDetailedFragment extends Fragment {
         mListener = null;
     }
 
+    @Override
+    public void onDayClick(EventDay eventDay) {
+
+    }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -156,5 +119,9 @@ public class ProgressReportDetailedFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public void onBackPressed() {
+        ((BaseActivity) getActivity()).removeFragment();
     }
 }

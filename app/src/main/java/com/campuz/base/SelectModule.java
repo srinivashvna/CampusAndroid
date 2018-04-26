@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.campuz.R;
-import com.campuz.parent.LoginActivity;
 
-import com.campuz.teacher.TeacherActivity;
+import com.campuz.parent.ParentLandingActivity;
+import com.campuz.teacher.TeacherLandingActivity;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SelectModule extends BaseActivity {
@@ -28,17 +28,17 @@ public class SelectModule extends BaseActivity {
         btn_Teacher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(SelectModule.this, TeacherActivity.class);
+                Intent i = new Intent(SelectModule.this, TeacherLandingActivity.class);
                 startActivity(i);
-            //    finish();
+                finish();
             }
         });
         btn_Parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(SelectModule.this, LoginActivity.class);
+                Intent i = new Intent(SelectModule.this, ParentLandingActivity.class);
                 startActivity(i);
-             //   finish();
+                finish();
             }
         });
 

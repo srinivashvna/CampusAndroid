@@ -10,29 +10,29 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.campuz.R;
-import com.campuz.adapter.EventsAdapter;
-import com.campuz.adapter.HolidayAdapter;
+import com.campuz.adapter.ExamsAdapter;
 import com.campuz.base.BaseActivity;
 import com.campuz.base.BaseFragment;
-import com.campuz.model.HolidayModel;
+import com.campuz.model.ExamsModel;
 
 import java.util.ArrayList;
 
-public class HolidayFragment extends BaseFragment {
+public class ParentExamsFragment extends BaseFragment {
     private static final String ARG_PARAM1 = "param1";
 
-    ArrayList<HolidayModel> holidays_list = new ArrayList<>();
-    ListView listview_holidays;
-    String[] holidays_ = {"Festival Holiday","Summer Holidays","Festival Holiday","Summer Holidays"};
+    ArrayList<ExamsModel> tests_list = new ArrayList<>();
+    ListView lv_test;
+    String[] test = {"Unit Test - 1", "Unit Test - 2", "Quarterly", "Half Yearly", "Annual"};
+    String[] test_status = {"Results", "Syllabus", "Syllabus", "Syllabus", "Syllabus"};
 
+    private ParentExamsFragment.OnFragmentInteractionListener mListener;
 
-    private HolidayFragment.OnFragmentInteractionListener mListener;
-
-    public HolidayFragment() {
+    public ParentExamsFragment() {
         // Required empty public constructor
     }
-    public static HolidayFragment newInstance(String param1, String param2) {
-        HolidayFragment fragment = new HolidayFragment();
+
+    public static ParentExamsFragment newInstance(String param1, String param2) {
+        ParentExamsFragment fragment = new ParentExamsFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -41,25 +41,25 @@ public class HolidayFragment extends BaseFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        for (int i = 0; i < holidays_.length; i++) {
-            HolidayModel items = new HolidayModel(holidays_[i]);
-            holidays_list.add(items);
+        for (int i = 0; i < test.length; i++) {
+            ExamsModel items = new ExamsModel(test[i], test_status[i]);
+            tests_list.add(items);
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_holidays,container,false);
+        View view = inflater.inflate(R.layout.fragment_exams, container, false);
 
-        listview_holidays = (ListView) view.findViewById(R.id.listview_holidays);
-        listview_holidays.setAdapter(new HolidayAdapter(getActivity(), R.layout.fragment_holidays_list_item, holidays_list));
+        lv_test = (ListView) view.findViewById(R.id.listview_exams);
+        lv_test.setAdapter(new ExamsAdapter(getActivity(), R.layout.fragment_exam_list_item, tests_list));
 
-        listview_holidays.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        lv_test.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                /*SyllabusDetailsFragment syllabusFragment = new SyllabusDetailsFragment();
-                ((BaseActivity)getActivity()).replaceFragment(syllabusFragment, true);*/
+                ParentExamDetailedFragment examDetailFragment = new ParentExamDetailedFragment();
+                ((BaseActivity) getActivity()).replaceFragment(examDetailFragment, true);
             }
         });
         return view;
@@ -68,8 +68,8 @@ public class HolidayFragment extends BaseFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof HolidayFragment.OnFragmentInteractionListener) {
-            mListener = (HolidayFragment.OnFragmentInteractionListener) context;
+        if (context instanceof ParentExamsFragment.OnFragmentInteractionListener) {
+            mListener = (ParentExamsFragment.OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -85,6 +85,7 @@ public class HolidayFragment extends BaseFragment {
         void onFragmentInteraction(Uri uri);
 
     }
+
 
     public void onBackPressed() {
         ((BaseActivity) getActivity()).removeFragment();

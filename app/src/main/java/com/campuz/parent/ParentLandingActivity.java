@@ -2,15 +2,10 @@ package com.campuz.parent;
 
 import android.content.Context;
 import android.content.pm.ActivityInfo;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -26,32 +21,32 @@ import android.widget.TextView;
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.campuz.R;
 import com.campuz.base.BaseActivity;
-import com.campuz.parentfragments.AttendanceReportFragment;
-import com.campuz.parentfragments.DairyReportFragment;
-import com.campuz.parentfragments.EventsFragment;
-import com.campuz.parentfragments.ExamDetailedFragment;
-import com.campuz.parentfragments.ExamsFragment;
-import com.campuz.parentfragments.HolidayFragment;
-import com.campuz.parentfragments.HomeFragment;
-import com.campuz.parentfragments.LeaveFragment;
-import com.campuz.parentfragments.ProgressReportDetailedFragment;
-import com.campuz.parentfragments.ProgressReportFragment;
-import com.campuz.parentfragments.SubjectsSyllabusFragment;
-import com.campuz.parentfragments.SyllabusDetailsFragment;
-import com.campuz.parentfragments.TimeTableFragment;
+import com.campuz.parentfragments.ParentAttendanceReportFragment;
+import com.campuz.parentfragments.ParentDairyReportFragment;
+import com.campuz.parentfragments.ParentEventsFragment;
+import com.campuz.parentfragments.ParentExamDetailedFragment;
+import com.campuz.parentfragments.ParentExamsFragment;
+import com.campuz.parentfragments.ParentHolidayFragment;
+import com.campuz.parentfragments.ParentHomeFragment;
+import com.campuz.parentfragments.ParentLeaveFragment;
+import com.campuz.parentfragments.ParentProgressReportDetailedFragment;
+import com.campuz.parentfragments.ParentProgressReportFragment;
+import com.campuz.parentfragments.ParentSubjectsSyllabusFragment;
+import com.campuz.parentfragments.ParentSyllabusDetailsFragment;
+import com.campuz.parentfragments.ParentTimeTableFragment;
 
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
-import com.campuz.parentfragments.NotificationsFragment;
+import com.campuz.parentfragments.ParentNotificationsFragment;
 
 /**
  * Created by manikantad on 06-04-2018.
  */
 
-public class LandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, LeaveFragment.OnFragmentInteractionListener,HomeFragment.OnFragmentInteractionListener,DairyReportFragment.OnFragmentInteractionListener,
-        AttendanceReportFragment.OnFragmentInteractionListener, SubjectsSyllabusFragment.OnFragmentInteractionListener, SyllabusDetailsFragment.OnFragmentInteractionListener, ExamsFragment.OnFragmentInteractionListener
-        ,ExamDetailedFragment.OnFragmentInteractionListener,TimeTableFragment.OnFragmentInteractionListener,ProgressReportFragment.OnFragmentInteractionListener,ProgressReportDetailedFragment.OnFragmentInteractionListener
-        ,EventsFragment.OnFragmentInteractionListener,NotificationsFragment.OnFragmentInteractionListener,HolidayFragment.OnFragmentInteractionListener{
+public class ParentLandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, ParentLeaveFragment.OnFragmentInteractionListener,ParentHomeFragment.OnFragmentInteractionListener,ParentDairyReportFragment.OnFragmentInteractionListener,
+        ParentAttendanceReportFragment.OnFragmentInteractionListener, ParentSubjectsSyllabusFragment.OnFragmentInteractionListener, ParentSyllabusDetailsFragment.OnFragmentInteractionListener, ParentExamsFragment.OnFragmentInteractionListener
+        ,ParentExamDetailedFragment.OnFragmentInteractionListener,ParentTimeTableFragment.OnFragmentInteractionListener,ParentProgressReportFragment.OnFragmentInteractionListener,ParentProgressReportDetailedFragment.OnFragmentInteractionListener
+        ,ParentEventsFragment.OnFragmentInteractionListener,ParentNotificationsFragment.OnFragmentInteractionListener,ParentHolidayFragment.OnFragmentInteractionListener{
 
     private View header;
 
@@ -96,8 +91,8 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
     }
 
     public void init() {
-        HomeFragment homeFragment = new HomeFragment();
-        replaceFragment(homeFragment, false);
+        ParentHomeFragment parentHomeFragment = new ParentHomeFragment();
+        replaceFragment(parentHomeFragment, false);
     }
 
     // pass context to Calligraphy
@@ -147,36 +142,36 @@ public class LandingActivity extends BaseActivity implements NavigationView.OnNa
         removeAllFragments();
         if (id == R.id.nav_location) {
 
-        }else if (id == R.id.nav_syllubus&& !(currentFragment instanceof SubjectsSyllabusFragment)) {
-            SubjectsSyllabusFragment subjectsSyllabusFragment = new SubjectsSyllabusFragment();
-            replaceFragment(subjectsSyllabusFragment, true);
-        }else if (id == R.id.nav_attendance&& !(currentFragment instanceof AttendanceReportFragment)) {
-            AttendanceReportFragment attendanceReportFragment = new AttendanceReportFragment();
-            replaceFragment(attendanceReportFragment, true);
-        }/*else if (id == R.id.nav_leaves&& !(currentFragment instanceof LeaveFragment)) {
-            LeaveFragment leaveFragment = new LeaveFragment();
+        }else if (id == R.id.nav_syllubus&& !(currentFragment instanceof ParentSubjectsSyllabusFragment)) {
+            ParentSubjectsSyllabusFragment parentSubjectsSyllabusFragment = new ParentSubjectsSyllabusFragment();
+            replaceFragment(parentSubjectsSyllabusFragment, true);
+        }else if (id == R.id.nav_attendance&& !(currentFragment instanceof ParentAttendanceReportFragment)) {
+            ParentAttendanceReportFragment parentAttendanceReportFragment = new ParentAttendanceReportFragment();
+            replaceFragment(parentAttendanceReportFragment, true);
+        }/*else if (id == R.id.nav_leaves&& !(currentFragment instanceof ParentLeaveFragment)) {
+            ParentLeaveFragment leaveFragment = new ParentLeaveFragment();
             replaceFragment(leaveFragment, true);
-        }*/else if (id == R.id.nav_dairy&& !(currentFragment instanceof DairyReportFragment)) {
-            DairyReportFragment dairyReportFragment = new DairyReportFragment();
-            replaceFragment(dairyReportFragment, true);
-        }else if (id == R.id.nav_exams&& !(currentFragment instanceof ExamsFragment)) {
-            ExamsFragment examsFragment = new ExamsFragment();
-            replaceFragment(examsFragment, true);
-        }else if (id == R.id.nav_timetable&& !(currentFragment instanceof TimeTableFragment)) {
-            TimeTableFragment timeTableFragment = new TimeTableFragment();
-            replaceFragment(timeTableFragment, true);
-        }/*else if (id == R.id.nav_progressReport&& !(currentFragment instanceof ProgressReportFragment)) {
-            ProgressReportFragment progressReportFragment = new ProgressReportFragment();
+        }*/else if (id == R.id.nav_dairy&& !(currentFragment instanceof ParentDairyReportFragment)) {
+            ParentDairyReportFragment parentDairyReportFragment = new ParentDairyReportFragment();
+            replaceFragment(parentDairyReportFragment, true);
+        }else if (id == R.id.nav_exams&& !(currentFragment instanceof ParentExamsFragment)) {
+            ParentExamsFragment parentExamsFragment = new ParentExamsFragment();
+            replaceFragment(parentExamsFragment, true);
+        }else if (id == R.id.nav_timetable&& !(currentFragment instanceof ParentTimeTableFragment)) {
+            ParentTimeTableFragment parentTimeTableFragment = new ParentTimeTableFragment();
+            replaceFragment(parentTimeTableFragment, true);
+        }/*else if (id == R.id.nav_progressReport&& !(currentFragment instanceof ParentProgressReportFragment)) {
+            ParentProgressReportFragment progressReportFragment = new ParentProgressReportFragment();
             replaceFragment(progressReportFragment, true);
-        }*/else if (id == R.id.nav_events&& !(currentFragment instanceof EventsFragment)) {
-            EventsFragment eventsFragment = new EventsFragment();
-            replaceFragment(eventsFragment, true);
-        }else if (id == R.id.nav_notifications&& !(currentFragment instanceof NotificationsFragment)) {
-            NotificationsFragment notificationsFragment = new NotificationsFragment();
-            replaceFragment(notificationsFragment, true);
-        }else if (id == R.id.nav_holidays&& !(currentFragment instanceof HolidayFragment)) {
-            HolidayFragment holidayFragment = new HolidayFragment();
-            replaceFragment(holidayFragment, true);
+        }*/else if (id == R.id.nav_events&& !(currentFragment instanceof ParentEventsFragment)) {
+            ParentEventsFragment parentEventsFragment = new ParentEventsFragment();
+            replaceFragment(parentEventsFragment, true);
+        }else if (id == R.id.nav_notifications&& !(currentFragment instanceof ParentNotificationsFragment)) {
+            ParentNotificationsFragment parentNotificationsFragment = new ParentNotificationsFragment();
+            replaceFragment(parentNotificationsFragment, true);
+        }else if (id == R.id.nav_holidays&& !(currentFragment instanceof ParentHolidayFragment)) {
+            ParentHolidayFragment parentHolidayFragment = new ParentHolidayFragment();
+            replaceFragment(parentHolidayFragment, true);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -22,14 +22,15 @@ import android.widget.TextView;
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.campuz.R;
 import com.campuz.base.BaseActivity;
-import com.campuz.parentfragments.SubjectsSyllabusFragment;
-import com.campuz.teacherfragments.AttendanceFragment;
-import com.campuz.teacherfragments.HomeFragmentTeacher;
+import com.campuz.parentfragments.ParentSubjectsSyllabusFragment;
+import com.campuz.teacherfragments.TeacherAttendanceFragment;
+import com.campuz.teacherfragments.TeacherHomeFragment;
+import com.campuz.teacherfragments.TeacherTakeAttendanceFragment;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class TeacherActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener,HomeFragmentTeacher.OnFragmentInteractionListener,
-        AttendanceFragment.OnFragmentInteractionListener{
+public class TeacherLandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener,TeacherHomeFragment.OnFragmentInteractionListener,
+        TeacherAttendanceFragment.OnFragmentInteractionListener,TeacherTakeAttendanceFragment.OnFragmentInteractionListener{
 
     private View header;
     @Override
@@ -73,7 +74,7 @@ public class TeacherActivity extends BaseActivity implements NavigationView.OnNa
 
     }
     public void init() {
-        HomeFragmentTeacher homeFragment = new HomeFragmentTeacher();
+        TeacherHomeFragment homeFragment = new TeacherHomeFragment();
         replaceFragment(homeFragment, false);
     }
     // pass context to Calligraphy
@@ -118,13 +119,15 @@ public class TeacherActivity extends BaseActivity implements NavigationView.OnNa
         int id = item.getItemId();
         Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.container_layout);
         removeAllFragments();
-        if (id == R.id.nav_attendance) {
-            AttendanceFragment attendanceFragment = new AttendanceFragment();
-            replaceFragment(attendanceFragment, true);
-        }else if (id == R.id.nav_syllubus&& !(currentFragment instanceof SubjectsSyllabusFragment)) {
+        if (id == R.id.nav_attendance&&!(currentFragment instanceof ParentSubjectsSyllabusFragment)) {
+            TeacherAttendanceFragment teacherAttendanceFragment = new TeacherAttendanceFragment();
+            replaceFragment(teacherAttendanceFragment, true);
+        }else if (id == R.id.nav_syllubus&& !(currentFragment instanceof ParentSubjectsSyllabusFragment)) {
 
         }
-        return false;
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_teacher);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 
     @Override

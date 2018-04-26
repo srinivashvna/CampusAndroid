@@ -101,5 +101,8 @@
     <string name="edit_attendance">Edit Attendance</string>
     <string name="search_here">Search here..</string>
 
+    <string name="select_all">Select All</string>
+    <string name="unSelect_all">UnSelect All</string>
+
 
 </resources>

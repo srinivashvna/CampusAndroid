@@ -1,4 +1,4 @@
-package com.campuz.parent;
+package com.campuz.base;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.campuz.R;
-import com.campuz.base.BaseActivity;
+import com.campuz.parent.ParentLandingActivity;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -42,7 +42,7 @@ public class LoginActivity extends BaseActivity {
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(LoginActivity.this, LandingActivity.class);
+                Intent i = new Intent(LoginActivity.this, SelectModule.class);
                 startActivity(i);
                 finish();
             }

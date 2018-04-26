@@ -10,27 +10,30 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.campuz.adapter.DiaryReportAdapter;
+
 import com.campuz.R;
-import com.campuz.adapter.ExamsAdapter;
 import com.campuz.base.BaseActivity;
-import com.campuz.model.ExamsModel;
+import com.campuz.base.BaseFragment;
+import com.campuz.model.DiaryModel;
 
 import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ProgressReportFragment.OnFragmentInteractionListener} interface
+ * {@link ParentDairyReportFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link ProgressReportFragment#newInstance} factory method to
+ * Use the {@link ParentDairyReportFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProgressReportFragment extends Fragment {
+public class ParentDairyReportFragment extends BaseFragment {
 
-    ArrayList<ExamsModel> tests_list = new ArrayList<>();
-    ListView lv_test;
-    String[] test = {"Unit Test - 1", "Unit Test - 2", "Quarterly", "Half Yearly", "Annual"};
-    String[] test_status = {"Results", "Syllabus", "Syllabus", "Syllabus", "Syllabus"};
+    ArrayList<DiaryModel> chapter_list = new ArrayList<>();
+    ListView listview_diary;
+    String[] subject_names = {"Telugu", "Hindi", "English", "Maths", "Science", "Social"};
+    String[] home_work = {"Complete Poems", "Complete Poems", "Complete Poems", "Complete Poems", "Complete Poems", "Complete Poems"};
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,7 +46,7 @@ public class ProgressReportFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public ProgressReportFragment() {
+    public ParentDairyReportFragment() {
         // Required empty public constructor
     }
 
@@ -53,11 +56,11 @@ public class ProgressReportFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ProgressReportFragment.
+     * @return A new instance of fragment ParentDairyReportFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ProgressReportFragment newInstance(String param1, String param2) {
-        ProgressReportFragment fragment = new ProgressReportFragment();
+    public static ParentDairyReportFragment newInstance(String param1, String param2) {
+        ParentDairyReportFragment fragment = new ParentDairyReportFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -68,33 +71,34 @@ public class ProgressReportFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        for (int i = 0; i < test.length; i++) {
-            ExamsModel items = new ExamsModel(test[i], test_status[i]);
-            tests_list.add(items);
-        }
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+        for (int i = 0; i < subject_names.length; i++) {
+            DiaryModel items = new DiaryModel(subject_names[i], home_work[i]);
+            chapter_list.add(items);
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_progress_report, container, false);
 
-        lv_test = (ListView) view.findViewById(R.id.listview_exams);
-        lv_test.setAdapter(new ExamsAdapter(getActivity(), R.layout.fragment_exam_list_item, tests_list));
+        View view = inflater.inflate(R.layout.fragment_dairy_report, container, false);
 
-        lv_test.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listview_diary = (ListView) view.findViewById(R.id.diaryList);
+        listview_diary.setAdapter(new DiaryReportAdapter(getActivity(), R.layout.fragments_diary_report_item, chapter_list));
+
+        listview_diary.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ProgressReportDetailedFragment progressReportDetailedFragment = new ProgressReportDetailedFragment();
-                ((BaseActivity)getActivity()).replaceFragment(progressReportDetailedFragment, true);
+
             }
+
         });
+
+        // Inflate the layout for this fragment
         return view;
     }
 
@@ -135,5 +139,9 @@ public class ProgressReportFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public void onBackPressed() {
+        ((BaseActivity) getActivity()).removeFragment();
     }
 }

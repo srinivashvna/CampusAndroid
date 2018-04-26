@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".parent.LandingActivity"
+            android:name=".parent.ParentLandingActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"></activity>
@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".parent.LoginActivity"
+            android:name=".base.LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
@@ -43,7 +43,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
 
-        <activity android:name=".teacher.TeacherActivity"
+        <activity android:name=".teacher.TeacherLandingActivity"
             android:label="Campuz"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>

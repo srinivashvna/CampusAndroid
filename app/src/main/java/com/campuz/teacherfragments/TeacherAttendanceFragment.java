@@ -6,26 +6,24 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 
 import com.campuz.R;
 import com.campuz.base.BaseActivity;
 import com.campuz.base.BaseFragment;
-import com.campuz.parentfragments.SyllabusDetailsFragment;
 
-public class AttendanceFragment extends BaseFragment {
+public class TeacherAttendanceFragment extends BaseFragment {
 
     RelativeLayout rl_history, rl_take_attendance, rl_edit_attendance;
 
-    private AttendanceFragment.OnFragmentInteractionListener mListener;
+    private TeacherAttendanceFragment.OnFragmentInteractionListener mListener;
 
-    public AttendanceFragment() {
+    public TeacherAttendanceFragment() {
         // Required empty public constructor
     }
 
-    public static AttendanceFragment newInstance(String param1, String param2) {
-        AttendanceFragment fragment = new AttendanceFragment();
+    public static TeacherAttendanceFragment newInstance(String param1, String param2) {
+        TeacherAttendanceFragment fragment = new TeacherAttendanceFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -40,23 +38,25 @@ public class AttendanceFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_subjects_syllabus, container, false);
+        View view = inflater.inflate(R.layout.teacher_attendance, container, false);
 
         rl_history = (RelativeLayout) view.findViewById(R.id.rl_history);
         rl_take_attendance = (RelativeLayout) view.findViewById(R.id.rl_take_attendance);
         rl_edit_attendance = (RelativeLayout) view.findViewById(R.id.rl_edit_attendance);
 
-       /* rl_history.setOnClickListener(new View.OnClickListener() {
+        rl_edit_attendance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                TeacherTakeAttendanceFragment teacherTakeAttendanceFragment = new TeacherTakeAttendanceFragment();
+                ((BaseActivity)getActivity()).replaceFragment(teacherTakeAttendanceFragment, true);
             }
         });
 
         rl_take_attendance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                TeacherTakeAttendanceFragment teacherTakeAttendanceFragment = new TeacherTakeAttendanceFragment();
+                ((BaseActivity)getActivity()).replaceFragment(teacherTakeAttendanceFragment, true);
             }
         });
 
@@ -65,10 +65,7 @@ public class AttendanceFragment extends BaseFragment {
             public void onClick(View v) {
 
             }
-        });*/
-
-                /*SyllabusDetailsFragment syllabusFragment = new SyllabusDetailsFragment();
-                ((BaseActivity)getActivity()).replaceFragment(syllabusFragment, true);*/
+        });
 
         return view;
     }
@@ -76,8 +73,8 @@ public class AttendanceFragment extends BaseFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof AttendanceFragment.OnFragmentInteractionListener) {
-            mListener = (AttendanceFragment.OnFragmentInteractionListener) context;
+        if (context instanceof TeacherAttendanceFragment.OnFragmentInteractionListener) {
+            mListener = (TeacherAttendanceFragment.OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");

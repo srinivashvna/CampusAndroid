@@ -15,7 +15,7 @@ import com.amulyakhare.textdrawable.TextDrawable;
 import com.campuz.R;
 import com.campuz.base.BaseActivity;
 
-public class HomeFragmentTeacher extends Fragment {
+public class TeacherHomeFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -25,14 +25,14 @@ public class HomeFragmentTeacher extends Fragment {
     private String mParam2;
     private View view;
 
-    private HomeFragmentTeacher.OnFragmentInteractionListener mListener;
+    private TeacherHomeFragment.OnFragmentInteractionListener mListener;
 
-    public HomeFragmentTeacher() {
+    public TeacherHomeFragment() {
         // Required empty public constructor
     }
 
-    public static HomeFragmentTeacher newInstance(String param1, String param2) {
-        HomeFragmentTeacher fragment = new HomeFragmentTeacher();
+    public static TeacherHomeFragment newInstance(String param1, String param2) {
+        TeacherHomeFragment fragment = new TeacherHomeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -82,8 +82,8 @@ public class HomeFragmentTeacher extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof HomeFragmentTeacher.OnFragmentInteractionListener) {
-            mListener = (HomeFragmentTeacher.OnFragmentInteractionListener) context;
+        if (context instanceof TeacherHomeFragment.OnFragmentInteractionListener) {
+            mListener = (TeacherHomeFragment.OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");

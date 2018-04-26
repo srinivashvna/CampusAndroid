@@ -11,14 +11,13 @@ import android.widget.ListView;
 
 import com.campuz.R;
 import com.campuz.adapter.EventsAdapter;
-import com.campuz.adapter.SubjectsAdapter;
 import com.campuz.base.BaseActivity;
 import com.campuz.base.BaseFragment;
 import com.campuz.model.EventsModel;
 
 import java.util.ArrayList;
 
-public class EventsFragment extends BaseFragment {
+public class ParentEventsFragment extends BaseFragment {
     private static final String ARG_PARAM1 = "param1";
 
     ArrayList<EventsModel> event_list = new ArrayList<>();
@@ -26,13 +25,13 @@ public class EventsFragment extends BaseFragment {
     String[] events_names = {"Event - One","Event - One","Event - One","Event - One","Event - One"};
 
 
-    private EventsFragment.OnFragmentInteractionListener mListener;
+    private ParentEventsFragment.OnFragmentInteractionListener mListener;
 
-    public EventsFragment() {
+    public ParentEventsFragment() {
         // Required empty public constructor
     }
-    public static EventsFragment newInstance(String param1, String param2) {
-        EventsFragment fragment = new EventsFragment();
+    public static ParentEventsFragment newInstance(String param1, String param2) {
+        ParentEventsFragment fragment = new ParentEventsFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -58,7 +57,7 @@ public class EventsFragment extends BaseFragment {
         listview_events.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                /*SyllabusDetailsFragment syllabusFragment = new SyllabusDetailsFragment();
+                /*ParentSyllabusDetailsFragment syllabusFragment = new ParentSyllabusDetailsFragment();
                 ((BaseActivity)getActivity()).replaceFragment(syllabusFragment, true);*/
             }
         });
@@ -68,8 +67,8 @@ public class EventsFragment extends BaseFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof EventsFragment.OnFragmentInteractionListener) {
-            mListener = (EventsFragment.OnFragmentInteractionListener) context;
+        if (context instanceof ParentEventsFragment.OnFragmentInteractionListener) {
+            mListener = (ParentEventsFragment.OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");

@@ -1,41 +1,29 @@
 package com.campuz.parentfragments;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.campuz.adapter.DiaryReportAdapter;
-
+import com.amulyakhare.textdrawable.TextDrawable;
 import com.campuz.R;
 import com.campuz.base.BaseActivity;
-import com.campuz.base.BaseFragment;
-import com.campuz.model.DiaryModel;
-import com.campuz.model.SyllabusModel;
-
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link DairyReportFragment.OnFragmentInteractionListener} interface
+ * {@link ParentHomeFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link DairyReportFragment#newInstance} factory method to
+ * Use the {@link ParentHomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DairyReportFragment extends BaseFragment {
-
-    ArrayList<DiaryModel> chapter_list = new ArrayList<>();
-    ListView listview_diary;
-    String[] subject_names = {"Telugu", "Hindi", "English", "Maths", "Science", "Social"};
-    String[] home_work = {"Complete Poems", "Complete Poems", "Complete Poems", "Complete Poems", "Complete Poems", "Complete Poems"};
-
-
+public class ParentHomeFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -44,10 +32,11 @@ public class DairyReportFragment extends BaseFragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private View view;
 
     private OnFragmentInteractionListener mListener;
 
-    public DairyReportFragment() {
+    public ParentHomeFragment() {
         // Required empty public constructor
     }
 
@@ -57,11 +46,11 @@ public class DairyReportFragment extends BaseFragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment DairyReportFragment.
+     * @return A new instance of fragment ParentHomeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static DairyReportFragment newInstance(String param1, String param2) {
-        DairyReportFragment fragment = new DairyReportFragment();
+    public static ParentHomeFragment newInstance(String param1, String param2) {
+        ParentHomeFragment fragment = new ParentHomeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -76,29 +65,29 @@ public class DairyReportFragment extends BaseFragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        for (int i = 0; i < subject_names.length; i++) {
-            DiaryModel items = new DiaryModel(subject_names[i], home_work[i]);
-            chapter_list.add(items);
-        }
+
+    }
+
+    public void init(View view){
+        TextView txtName = (TextView) view.findViewById(R.id.textName);
+        txtName.setText(R.string.ds);
+        ImageView imgProfile = (ImageView) view.findViewById(R.id.imgProfile);
+        TextDrawable drawable = TextDrawable.builder().beginConfig()
+                .withBorder(10)
+                .bold()
+                .useFont(Typeface.DEFAULT)
+                .endConfig()
+                .buildRound("DS", getResources().getColor(R.color.appblue));
+
+
+        imgProfile.setImageDrawable(drawable);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_dairy_report, container, false);
-
-        listview_diary = (ListView) view.findViewById(R.id.diaryList);
-        listview_diary.setAdapter(new DiaryReportAdapter(getActivity(), R.layout.fragments_diary_report_item, chapter_list));
-
-        listview_diary.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-        });
-
+        view = inflater.inflate(R.layout.fragment_home, container, false);
+        init(view);
         // Inflate the layout for this fragment
         return view;
     }

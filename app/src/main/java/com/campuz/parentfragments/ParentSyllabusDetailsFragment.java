@@ -18,7 +18,7 @@ import com.campuz.model.SyllabusModel;
 
 import java.util.ArrayList;
 
-public class SyllabusDetailsFragment extends BaseFragment {
+public class ParentSyllabusDetailsFragment extends BaseFragment {
     private static final String ARG_PARAM1 = "param1";
 
     ArrayList<SyllabusModel> chapter_list = new ArrayList<>();
@@ -26,14 +26,14 @@ public class SyllabusDetailsFragment extends BaseFragment {
     String[] chapter_names = {"Chapter - 1", "Chapter - 2", "Chapter - 3", "Chapter - 4", "Chapter - 5", "Chapter - 6"};
     String[] chapter_titles = {"This is Chapter One", "This is Chapter Two", "This is Chapter Three", "This is Chapter Four", "This is Chapter Five", "This is Chapter Six"};
 
-    private SyllabusDetailsFragment.OnFragmentInteractionListener mListener;
+    private ParentSyllabusDetailsFragment.OnFragmentInteractionListener mListener;
 
-    public SyllabusDetailsFragment() {
+    public ParentSyllabusDetailsFragment() {
         // Required empty public constructor
     }
 
-    public static SyllabusDetailsFragment newInstance(String param1, String param2) {
-        SyllabusDetailsFragment fragment = new SyllabusDetailsFragment();
+    public static ParentSyllabusDetailsFragment newInstance(String param1, String param2) {
+        ParentSyllabusDetailsFragment fragment = new ParentSyllabusDetailsFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -67,7 +67,7 @@ public class SyllabusDetailsFragment extends BaseFragment {
                 Toast.makeText(getActivity(),"Selected Subject :"+selectedItem,Toast.LENGTH_SHORT).show();
 
                 //commented
-               /* SyllabusDetailsFragment syllabusFragment = new SyllabusDetailsFragment();
+               /* ParentSyllabusDetailsFragment syllabusFragment = new ParentSyllabusDetailsFragment();
                 ((BaseActivity)getActivity()).replaceFragment(syllabusFragment, true);*/
             }
 
@@ -78,8 +78,8 @@ public class SyllabusDetailsFragment extends BaseFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof SyllabusDetailsFragment.OnFragmentInteractionListener) {
-            mListener = (SyllabusDetailsFragment.OnFragmentInteractionListener) context;
+        if (context instanceof ParentSyllabusDetailsFragment.OnFragmentInteractionListener) {
+            mListener = (ParentSyllabusDetailsFragment.OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
