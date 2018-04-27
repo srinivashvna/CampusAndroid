@@ -1,16 +1,67 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    tools:ignore="MissingPrefix">
+
+    <TextView
+        android:id="@+id/title"
+        fontPath="fonts/Roboto-Bold.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/_5sdp"
+        android:text="@string/campuzschool"
+        android:textColor="@color/dullgrey"
+        android:textSize="@dimen/_20ssp" />
+
+    <TextView
+        android:id="@+id/apply"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/_5sdp"
+        android:text="@string/attendance_report_take"
+        android:textColor="@color/appblue"
+        android:textSize="@dimen/_37ssp" />
+
+    <TextView
+        android:id="@+id/select"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/apply"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_toStartOf="@+id/title"
+        android:text="@string/selectdate"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/select"
+        android:layout_alignStart="@+id/title"
+        android:background="@drawable/rounded_border_edittext"
+        android:drawableLeft="@drawable/dairyreports"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
 
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom_container"
-        android:horizontalSpacing="@dimen/_4sdp"
+        android:layout_below="@+id/editTextDate"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:numColumns="5"
-        android:verticalSpacing="@dimen/_4sdp" />
+        android:verticalSpacing="@dimen/_2sdp" />
 
     <include
         android:id="@+id/bottom_container"
@@ -18,5 +69,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="@dimen/_10sdp" />
+        android:layout_margin="@dimen/_5sdp" />
 </RelativeLayout>

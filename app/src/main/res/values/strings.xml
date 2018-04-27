@@ -107,5 +107,6 @@
 
     <string name="rollNumber">Roll No</string>
     <string name="search">Search</string>
+    <string name="attendance_report_take">Take Attendance</string>
 
 </resources>
