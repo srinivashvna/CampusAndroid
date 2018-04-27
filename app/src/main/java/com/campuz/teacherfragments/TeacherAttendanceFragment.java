@@ -63,7 +63,8 @@ public class TeacherAttendanceFragment extends BaseFragment {
         rl_history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                TeacherAttendanceHistoryFragment teacherAttendanceHistoryFragment = new TeacherAttendanceHistoryFragment();
+                ((BaseActivity)getActivity()).replaceFragment(teacherAttendanceHistoryFragment, true);
             }
         });
 

@@ -30,7 +30,6 @@ public class SelectModule extends BaseActivity {
             public void onClick(View v) {
                 Intent i = new Intent(SelectModule.this, TeacherLandingActivity.class);
                 startActivity(i);
-                finish();
             }
         });
         btn_Parent.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +37,6 @@ public class SelectModule extends BaseActivity {
             public void onClick(View v) {
                 Intent i = new Intent(SelectModule.this, ParentLandingActivity.class);
                 startActivity(i);
-                finish();
             }
         });
 

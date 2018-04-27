@@ -105,4 +105,7 @@
     <string name="unSelect_all">UnSelect All</string>
 
 
+    <string name="rollNumber">Roll No</string>
+    <string name="search">Search</string>
+
 </resources>

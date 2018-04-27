@@ -1,13 +1,119 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.campuz.teacherfragments.TeacherAttendanceHistoryFragment">
+    tools:context="com.campuz.parentfragments.ParentAttendanceReportFragment"
+    tools:ignore="MissingPrefix">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/title"
+                fontPath="fonts/Roboto-Bold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="@string/campuzschool"
+                android:textColor="@color/dullgrey"
+                android:textSize="@dimen/_20ssp" />
+
+            <TextView
+                android:id="@+id/apply"
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="@string/attendance_report"
+                android:textColor="@color/appblue"
+                android:textSize="@dimen/_37ssp" />
+
+            <TextView
+                android:id="@+id/select"
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/apply"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_toStartOf="@+id/title"
+                android:text="@string/selectdate"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <EditText
+                android:id="@+id/editTextDate"
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/select"
+                android:layout_alignStart="@+id/title"
+                android:background="@drawable/rounded_border_edittext"
+                android:drawableLeft="@drawable/dairyreports"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/selectRollNumber"
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/select"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_toStartOf="@+id/title"
+                android:text="@string/rollNumber"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <EditText
+                android:id="@+id/editRollNo"
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/selectRollNumber"
+                android:layout_alignStart="@+id/title"
+                android:background="@drawable/rounded_border_edittext"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="" />
+
+            <Button
+                android:id="@+id/search"
+                fontPath="fonts/Roboto-Regular.ttf"
+                style="?android:textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editRollNo"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/rounded_border_button"
+                android:text="@string/search"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <com.applandeo.materialcalendarview.CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/search"
+                android:layout_margin="@dimen/_10sdp"
+                app:datePicker="false"
+                app:headerColor="@color/appblue" />
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+</RelativeLayout>

@@ -24,13 +24,14 @@ import com.campuz.R;
 import com.campuz.base.BaseActivity;
 import com.campuz.parentfragments.ParentSubjectsSyllabusFragment;
 import com.campuz.teacherfragments.TeacherAttendanceFragment;
+import com.campuz.teacherfragments.TeacherAttendanceHistoryFragment;
 import com.campuz.teacherfragments.TeacherHomeFragment;
 import com.campuz.teacherfragments.TeacherTakeAttendanceFragment;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class TeacherLandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener,TeacherHomeFragment.OnFragmentInteractionListener,
-        TeacherAttendanceFragment.OnFragmentInteractionListener,TeacherTakeAttendanceFragment.OnFragmentInteractionListener{
+        TeacherAttendanceFragment.OnFragmentInteractionListener,TeacherTakeAttendanceFragment.OnFragmentInteractionListener,TeacherAttendanceHistoryFragment.OnFragmentInteractionListener{
 
     private View header;
     @Override

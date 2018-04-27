@@ -9,6 +9,7 @@ import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
@@ -36,6 +37,7 @@ public class TeacherTakeAttendanceFragment extends BaseFragment {
     private TeacherTakeAttendanceAdapter adapter;
     private ArrayList<String> arrayList;
     private Button selectButton;
+    private GridView gridView;
 
 
     // TODO: Rename and change types of parameters
@@ -75,7 +77,7 @@ public class TeacherTakeAttendanceFragment extends BaseFragment {
     }
 
     private void loadGridView(View view) {
-        GridView gridView = (GridView) view.findViewById(R.id.grid_view);
+        gridView = (GridView) view.findViewById(R.id.grid_view);
         arrayList = new ArrayList<>();
         for (int i = 1; i <= 50; i++)
             arrayList.add(i+"");
@@ -97,7 +99,6 @@ public class TeacherTakeAttendanceFragment extends BaseFragment {
                             stringBuilder.append(selectedRowLabel + "\n");
                         }
                     }
-                    Toast.makeText(getActivity(), "Selected Rows\n" + stringBuilder.toString(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -109,8 +110,9 @@ public class TeacherTakeAttendanceFragment extends BaseFragment {
                 if (selectButton.getText().toString().equals(getResources().getString(R.string.select_all))) {
 
                     //If Text is Select All then loop to all array List items and check all of them
-                    for (int i = 0; i < arrayList.size(); i++)
+                    for (int i = 0; i < arrayList.size(); i++) {
                         adapter.checkCheckBox(i, true);
+                    }
 
                     //After checking all items change button text
                     selectButton.setText(getResources().getString(R.string.unSelect_all));

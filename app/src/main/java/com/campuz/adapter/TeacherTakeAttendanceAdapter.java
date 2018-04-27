@@ -2,11 +2,13 @@ package com.campuz.adapter;
 
 import android.content.Context;
 import android.util.SparseBooleanArray;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CheckedTextView;
 import android.widget.TextView;
 
 import com.campuz.R;
@@ -21,14 +23,12 @@ public class TeacherTakeAttendanceAdapter  extends BaseAdapter {
     private Context context;
     private ArrayList<String> arrayList;
     private LayoutInflater inflater;
-    private boolean isListView;
     private SparseBooleanArray mSelectedItemsIds;
     private ViewHolder viewHolder;
 
     public TeacherTakeAttendanceAdapter(Context context, ArrayList<String> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
-        this.isListView = isListView;
         inflater = LayoutInflater.from(context);
         mSelectedItemsIds = new SparseBooleanArray();
     }
@@ -56,25 +56,22 @@ public class TeacherTakeAttendanceAdapter  extends BaseAdapter {
 
             //inflate the layout on basis of boolean
             view = inflater.inflate(R.layout.grid_custom_row_layout, viewGroup, false);
-
-            viewHolder.label = (TextView) view.findViewById(R.id.label);
-            viewHolder.checkBox = (CheckBox) view.findViewById(R.id.checkbox);
+            viewHolder.checkBox = (CheckedTextView) view.findViewById(R.id.checkbox);
 
             view.setTag(viewHolder);
         } else
             viewHolder = (ViewHolder) view.getTag();
 
-        viewHolder.label.setText(arrayList.get(i));
+
+        viewHolder.checkBox.setText(arrayList.get(i));
         viewHolder.checkBox.setChecked(mSelectedItemsIds.get(i));
-
+        if(mSelectedItemsIds.get(i)) {
+            viewHolder.checkBox.setBackgroundColor(context.getResources().getColor(R.color.appcolor));
+        }
+        else {
+            viewHolder.checkBox.setBackgroundColor(context.getResources().getColor(R.color.absent));
+        }
         viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checkCheckBox(i, !mSelectedItemsIds.get(i));
-            }
-        });
-
-        viewHolder.label.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkCheckBox(i, !mSelectedItemsIds.get(i));
@@ -85,8 +82,8 @@ public class TeacherTakeAttendanceAdapter  extends BaseAdapter {
     }
 
     private class ViewHolder {
-        private TextView label;
-        private CheckBox checkBox;
+        //private TextView label;
+        private CheckedTextView checkBox;
     }
 
 
@@ -105,9 +102,9 @@ public class TeacherTakeAttendanceAdapter  extends BaseAdapter {
         if (value) {
             mSelectedItemsIds.put(position, true);
         }
-        else
+        else {
             mSelectedItemsIds.delete(position);
-
+        }
         notifyDataSetChanged();
     }
 
