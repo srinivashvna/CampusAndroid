@@ -22,6 +22,7 @@ import com.amulyakhare.textdrawable.TextDrawable;
 import com.campuz.R;
 import com.campuz.base.BaseActivity;
 import com.campuz.parentfragments.ParentAttendanceReportFragment;
+import com.campuz.parentfragments.ParentBusLocationFragment;
 import com.campuz.parentfragments.ParentDairyReportFragment;
 import com.campuz.parentfragments.ParentEventsFragment;
 import com.campuz.parentfragments.ParentExamDetailedFragment;
@@ -46,7 +47,7 @@ import com.campuz.parentfragments.ParentNotificationsFragment;
 public class ParentLandingActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, ParentLeaveFragment.OnFragmentInteractionListener,ParentHomeFragment.OnFragmentInteractionListener,ParentDairyReportFragment.OnFragmentInteractionListener,
         ParentAttendanceReportFragment.OnFragmentInteractionListener, ParentSubjectsSyllabusFragment.OnFragmentInteractionListener, ParentSyllabusDetailsFragment.OnFragmentInteractionListener, ParentExamsFragment.OnFragmentInteractionListener
         ,ParentExamDetailedFragment.OnFragmentInteractionListener,ParentTimeTableFragment.OnFragmentInteractionListener,ParentProgressReportFragment.OnFragmentInteractionListener,ParentProgressReportDetailedFragment.OnFragmentInteractionListener
-        ,ParentEventsFragment.OnFragmentInteractionListener,ParentNotificationsFragment.OnFragmentInteractionListener,ParentHolidayFragment.OnFragmentInteractionListener{
+        ,ParentEventsFragment.OnFragmentInteractionListener,ParentNotificationsFragment.OnFragmentInteractionListener,ParentHolidayFragment.OnFragmentInteractionListener,ParentBusLocationFragment.OnFragmentInteractionListener{
 
     private View header;
 
@@ -148,10 +149,7 @@ public class ParentLandingActivity extends BaseActivity implements NavigationVie
         }else if (id == R.id.nav_attendance&& !(currentFragment instanceof ParentAttendanceReportFragment)) {
             ParentAttendanceReportFragment parentAttendanceReportFragment = new ParentAttendanceReportFragment();
             replaceFragment(parentAttendanceReportFragment, true);
-        }/*else if (id == R.id.nav_leaves&& !(currentFragment instanceof ParentLeaveFragment)) {
-            ParentLeaveFragment leaveFragment = new ParentLeaveFragment();
-            replaceFragment(leaveFragment, true);
-        }*/else if (id == R.id.nav_dairy&& !(currentFragment instanceof ParentDairyReportFragment)) {
+        }else if (id == R.id.nav_dairy&& !(currentFragment instanceof ParentDairyReportFragment)) {
             ParentDairyReportFragment parentDairyReportFragment = new ParentDairyReportFragment();
             replaceFragment(parentDairyReportFragment, true);
         }else if (id == R.id.nav_exams&& !(currentFragment instanceof ParentExamsFragment)) {
@@ -160,10 +158,7 @@ public class ParentLandingActivity extends BaseActivity implements NavigationVie
         }else if (id == R.id.nav_timetable&& !(currentFragment instanceof ParentTimeTableFragment)) {
             ParentTimeTableFragment parentTimeTableFragment = new ParentTimeTableFragment();
             replaceFragment(parentTimeTableFragment, true);
-        }/*else if (id == R.id.nav_progressReport&& !(currentFragment instanceof ParentProgressReportFragment)) {
-            ParentProgressReportFragment progressReportFragment = new ParentProgressReportFragment();
-            replaceFragment(progressReportFragment, true);
-        }*/else if (id == R.id.nav_events&& !(currentFragment instanceof ParentEventsFragment)) {
+        }else if (id == R.id.nav_events&& !(currentFragment instanceof ParentEventsFragment)) {
             ParentEventsFragment parentEventsFragment = new ParentEventsFragment();
             replaceFragment(parentEventsFragment, true);
         }else if (id == R.id.nav_notifications&& !(currentFragment instanceof ParentNotificationsFragment)) {
@@ -172,6 +167,9 @@ public class ParentLandingActivity extends BaseActivity implements NavigationVie
         }else if (id == R.id.nav_holidays&& !(currentFragment instanceof ParentHolidayFragment)) {
             ParentHolidayFragment parentHolidayFragment = new ParentHolidayFragment();
             replaceFragment(parentHolidayFragment, true);
+        }else if (id == R.id.nav_loc && !(currentFragment instanceof ParentBusLocationFragment)) {
+            ParentBusLocationFragment parentBusLocationFragment = new ParentBusLocationFragment();
+            replaceFragment(parentBusLocationFragment, true);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

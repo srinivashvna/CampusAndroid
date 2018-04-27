@@ -48,4 +48,5 @@ dependencies {
     //calendar view
     implementation 'com.applandeo:material-calendar-view:1.4.0'
 
+    implementation 'com.google.android.gms:play-services-maps:15.0.0'
 }

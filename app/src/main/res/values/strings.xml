@@ -120,4 +120,7 @@
     <string name="teacher_timetable">Teacher TimeTable</string>
     <string name="teacher_Holidays">Teacher Holidays</string>
 
+    <string name="busestimattime">ETA : 10 Min</string>
+    <string name="busaddress">Ag Colony, Erragadda, Hyderabad</string>
+
 </resources>
