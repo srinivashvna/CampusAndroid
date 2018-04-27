@@ -22,15 +22,6 @@
             android:title="@string/item_reports_dairy" />
     </group>
 
-    <group
-        android:id="@+id/nav_chatgroup"
-        android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_chat"
-            fontPath="fonts/Roboto-Regular.ttf"
-            android:icon="@drawable/chat"
-            android:title="@string/item_chat" />
-    </group>
 
     <group
         android:id="@+id/nav_time"
@@ -42,15 +33,6 @@
             android:title="@string/item_timetable" />
     </group>
 
-    <group
-        android:id="@+id/nav_leav"
-        android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_leaves"
-            fontPath="fonts/Roboto-Regular.ttf"
-            android:icon="@drawable/leaves"
-            android:title="@string/item_leave_approval" />
-    </group>
 
     <!-- <group
          android:id="@+id/nav_con"

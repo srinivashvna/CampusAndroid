@@ -121,11 +121,12 @@ public class TeacherLandingActivity extends BaseActivity implements NavigationVi
         int id = item.getItemId();
         Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.container_layout);
         removeAllFragments();
-        if (id == R.id.nav_attendance&&!(currentFragment instanceof ParentSubjectsSyllabusFragment)) {
+        if (id == R.id.nav_attendance&&!(currentFragment instanceof TeacherAttendanceFragment)) {
             TeacherAttendanceFragment teacherAttendanceFragment = new TeacherAttendanceFragment();
             replaceFragment(teacherAttendanceFragment, true);
-        }else if (id == R.id.nav_syllubus&& !(currentFragment instanceof ParentSubjectsSyllabusFragment)) {
-
+        }else if (id == R.id.nav_dairy&& !(currentFragment instanceof TeacherDiaryReportFragment)) {
+            TeacherDiaryReportFragment teacherDiaryReportFragment = new TeacherDiaryReportFragment();
+            replaceFragment(teacherDiaryReportFragment, true);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_teacher);
         drawer.closeDrawer(GravityCompat.START);

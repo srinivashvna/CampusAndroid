@@ -36,23 +36,49 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/apply"
         android:layout_marginTop="@dimen/_30sdp"
-        android:layout_toStartOf="@+id/title"
-        android:text="@string/selectdate"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:text="@string/date_diary"
         android:textColor="@color/black"
         android:textSize="@dimen/_14ssp" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        fontPath="fonts/Roboto-Regular.ttf"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/select"
-        android:layout_alignStart="@+id/title"
+        android:layout_alignStart="@+id/select"
+        android:layout_below="@+id/select"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/subject" />
+
+    <EditText
+        android:id="@+id/et_desc"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_10sdp"
         android:background="@drawable/rounded_border_edittext"
-        android:drawableLeft="@drawable/dairyreports"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="" />
+        android:gravity="start"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:hint="@string/diary_hint"
+        android:maxLength="250"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_18ssp" />
+
+    <Button
+        android:id="@+id/submit"
+        fontPath="fonts/Roboto-Regular.ttf"
+        style="?android:textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_desc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:background="@drawable/rounded_border_button"
+        android:text="@string/submit"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

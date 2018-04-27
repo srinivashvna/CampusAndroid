@@ -19,7 +19,7 @@
             android:name=".parent.ParentLandingActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".base.SplashActivity"
             android:label="@string/app_name"
@@ -35,17 +35,20 @@
             android:name=".base.LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            ></activity>
-
-        <activity android:name=".base.SelectModule"
-            android:label="Campuz"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".base.SelectModule"
+            android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
-        <activity android:name=".teacher.TeacherLandingActivity"
-            android:label="Campuz"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.TeacherLandingActivity"
+            android:label="@string/app_name"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".teacher.TeacherHomeActivity"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

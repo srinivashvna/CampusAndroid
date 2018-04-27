@@ -1,8 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.campuz.teacherfragments.TeacherHomeFragment"
     tools:ignore="MissingPrefix">
 
@@ -17,34 +17,71 @@
         android:textColor="@color/dullgrey"
         android:textSize="@dimen/_20ssp" />
 
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_70sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_below="@+id/title"
+        android:src="@drawable/ellipse" />
+
     <TextView
         android:id="@+id/textName"
         fontPath="fonts/Roboto-Bold.ttf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/title"
+        android:layout_below="@+id/imgProfile"
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/_10sdp"
-        android:text="@string/classes"
+        android:text="@string/alekhya"
         android:textSize="@dimen/_14ssp" />
 
-    <TextView
-        android:id="@+id/textRollNo"
-        fontPath="fonts/Roboto-Regular.ttf"
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/classSpinner"
+        android:layout_width="@dimen/_200sdp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textName"
         android:layout_centerHorizontal="true"
-        android:text="@string/section"
-        android:textSize="@dimen/_14ssp" />
+        android:layout_marginTop="@dimen/_10sdp" />
 
+    <Spinner
+        android:id="@+id/sectionSpinner"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/classSpinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp" />
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <Spinner
+        android:id="@+id/subjectSpinner"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sectionSpinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp" />
+
+    <Button
+        android:id="@+id/submit"
+        style="?android:textAppearanceSmall"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subjectSpinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/rounded_border_button"
+        android:text="@string/submit"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textRollNo"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:fillViewport="true">
+        android:layout_below="@+id/submit"
+        android:layout_margin="@dimen/_2sdp">
+
 
         <TableLayout
             android:layout_width="match_parent"
@@ -53,37 +90,22 @@
             android:stretchColumns="1"
             android:weightSum="1">
 
+
             <TableRow>
 
+
                 <Button
-                    android:id="@+id/btnAttendance"
+                    android:id="@+id/btnTeacherTimeTable"
                     fontPath="fonts/Roboto-Regular.ttf"
                     android:layout_width="@dimen/_0sdp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_5sdp"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_button_home"
-                    android:drawableStart="@drawable/attendance"
+                    android:drawableStart="@drawable/timetable"
                     android:paddingLeft="@dimen/_10sdp"
                     android:paddingRight="@dimen/_30sdp"
-                    android:text="@string/item_attendance"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_13ssp" />
-
-
-                <Button
-                    android:id="@+id/btnDairyReport"
-                    fontPath="fonts/Roboto-Regular.ttf"
-                    android:layout_width="@dimen/_0sdp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_5sdp"
-                    android:layout_weight="1"
-                    android:background="@drawable/rounded_button_home"
-                    android:drawableStart="@drawable/dairyreports"
-                    android:paddingLeft="@dimen/_10sdp"
-                    android:paddingRight="@dimen/_30sdp"
-                    android:text="@string/item_reports_dairy"
+                    android:text="@string/teacher_timetable"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_13ssp" />
@@ -100,25 +122,20 @@
                     android:layout_margin="@dimen/_5sdp"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_button_home"
-                    android:drawableStart="@drawable/timetable"
+                    android:drawableStart="@drawable/holidays"
                     android:paddingLeft="@dimen/_10sdp"
                     android:paddingRight="@dimen/_30sdp"
-                    android:text="@string/item_timetable"
+                    android:text="@string/teacher_Holidays"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_13ssp" />
             </TableRow>
 
-            <TableRow>
-
-
-            </TableRow>
-
 
         </TableLayout>
+
+
     </ScrollView>
-
-
 
 
 </RelativeLayout>

@@ -53,16 +53,12 @@ public class TeacherHomeFragment extends Fragment {
     public void init(View view){
         TextView txtName = (TextView) view.findViewById(R.id.textName);
         txtName.setText(R.string.alekhya);
-        ImageView imgProfile = (ImageView) view.findViewById(R.id.imgProfile);
         TextDrawable drawable = TextDrawable.builder().beginConfig()
                 .withBorder(10)
                 .bold()
                 .useFont(Typeface.DEFAULT)
                 .endConfig()
                 .buildRound("AK", getResources().getColor(R.color.appblue));
-
-
-        imgProfile.setImageDrawable(drawable);
     }
 
     @Override

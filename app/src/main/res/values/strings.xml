@@ -111,4 +111,13 @@
 
     <string name="diary_report">Diary Report</string>
 
+    <string name="date_diary">Date: 27-04-2018</string>
+    <string name="diary_hint">enter diary report here</string>
+    <string name="title_activity_teacher_home">TeacherHomeActivity</string>
+    <string name="classes">Class : 7</string>
+    <string name="section">Section : B</string>
+
+    <string name="teacher_timetable">Teacher TimeTable</string>
+    <string name="teacher_Holidays">Teacher Holidays</string>
+
 </resources>
