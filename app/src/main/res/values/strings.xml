@@ -109,4 +109,6 @@
     <string name="search">Search</string>
     <string name="attendance_report_take">Take Attendance</string>
 
+    <string name="diary_report">Diary Report</string>
+
 </resources>

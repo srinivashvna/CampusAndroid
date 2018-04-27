@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.campuz.parentfragments.ParentAttendanceReportFragment"
+    tools:ignore="MissingPrefix">
+
+    <TextView
+        android:id="@+id/title"
+        fontPath="fonts/Roboto-Bold.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/_5sdp"
+        android:text="@string/campuzschool"
+        android:textColor="@color/dullgrey"
+        android:textSize="@dimen/_20ssp" />
+
+    <TextView
+        android:id="@+id/apply"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/_5sdp"
+        android:text="@string/diary_report"
+        android:textColor="@color/appblue"
+        android:textSize="@dimen/_37ssp" />
+
+    <TextView
+        android:id="@+id/select"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/apply"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_toStartOf="@+id/title"
+        android:text="@string/selectdate"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/select"
+        android:layout_alignStart="@+id/title"
+        android:background="@drawable/rounded_border_edittext"
+        android:drawableLeft="@drawable/dairyreports"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+
+</RelativeLayout>
