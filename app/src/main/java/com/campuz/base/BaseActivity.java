@@ -53,7 +53,7 @@ public class BaseActivity extends AppCompatActivity {
                     InputMethodManager.HIDE_NOT_ALWAYS);
 
         } catch (Exception e) {
-            System.out.println("Exception in savenote" + e.toString());
+            System.out.println("Exception in savenotes" + e.toString());
         }
     }
 
