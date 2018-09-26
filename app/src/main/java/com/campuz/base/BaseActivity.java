@@ -26,7 +26,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+System.out.println("Exception in savenote" + e.toString());
     }
 
     public ProgressDialog showProgressDialog(Context context, String text) {
