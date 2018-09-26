@@ -61,7 +61,7 @@ public class BaseActivity extends AppCompatActivity {
         try {
 
             SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.DATE_FORMAT_LOCATION);
-            String currentDateTime = dateFormat.format(new Date()); // Find todays date
+            String currentDateTime = dateFormat.format(new Date()); // Find today date
 
             return currentDateTime;
         } catch (Exception e) {
